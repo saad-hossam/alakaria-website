@@ -1,0 +1,20 @@
+<?php
+return [
+    "office_title" => "Our Office",
+    "address" => "Al Qanatir al Khayriyah, Egypt",
+    "phone" => "+012 345 67890",
+    "email" => "info@example.com",
+    "quick_links" => "Quick Links",
+    "about_us" => "About Us",
+    "contact_us" => "Contact Us",
+    "services" => "Our Services",
+    "terms" => "Terms & Conditions",
+    "support" => "Support",
+    "working_hours" => "Working Hours",
+    "saturday_thursday" => "Saturday - Thursday",
+    "working_time" => "09:00 AM - 06:00 PM",
+    "friday" => "Friday",
+    "closed" => "Closed",
+    "all_rights_reserved" => "All rights reserved.",
+    "design_by" => "Designed by Saad & Salem",
+];
