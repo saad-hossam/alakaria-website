@@ -305,6 +305,9 @@ body {
     right: 0; /* Changed from left to right */
 }
 
+.about{
+    margin-top: 100px;
+}
 /*** About ***/
 .about-experience {
     position: absolute;

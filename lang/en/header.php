@@ -3,9 +3,9 @@ return[
     'home'=>'HOME',
     'products'=>'PRODUCTS',
     'our_profile'=>'OUR PROFILE',
-    'our_services'=>'OUR SERVICES',
-    'our_team'=>'OUR TEAM',
-    'gallary'=>'GALLARY',
+    'our_services'=>' SERVICES',
+    'our_departments'=>' DEPARTMENTS',
+
     'our_vision'=>'OUR VISION',
     'our_message'=>'OUR MESSAGE',
     'our_goal'=>'OUR GOAL',

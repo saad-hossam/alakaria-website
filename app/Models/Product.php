@@ -27,22 +27,14 @@ class Product extends Model
     {
         return $this->hasMany(ProductTranslation::class);
     }
-    public function category()
-    {
-        return $this->belongsTo(Category::class);
-    }
+    // public function category()
+    // {
+    //     return $this->belongsTo(Category::class);
+    // }
 
     public function photos()
     {
         return $this->morphMany(Photo::class, 'photoable');
-    }
-    public function scopeOfferd($query)
-    {
-        return $query->where('offerd',true);
-    }
-    public function scopeStocked($query)
-    {
-        return $query->where('stocked',true);
     }
 
     public function scopeActive($query)

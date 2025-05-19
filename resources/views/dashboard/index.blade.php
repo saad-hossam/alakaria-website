@@ -13,7 +13,7 @@
 				<div class="breadcrumb-header justify-content-between">
 					<div class="left-content">
 						<div>
-						  <h2 class="main-content-title tx-24 mg-b-1 mg-b-lg-1">مصنع كولمار</h2>
+						  <h2 class="main-content-title tx-24 mg-b-1 mg-b-lg-1">الشركة العقارية</h2>
 						  <p class="mg-b-0">لوحه التحكم</p>
 						</div>
 					</div>
@@ -39,6 +39,7 @@
 @section('content')
 				<!-- row -->
 
+
 		<!-- Container closed -->
 @endsection
 
@@ -53,6 +54,8 @@
 <!--Internal Echart Plugin -->
 <script src="{{URL::asset('assets/admin/plugins/echart/echart.js')}}"></script>
 {{-- <script src="{{URL::asset('assets/admin/js/echarts.js')}}"></script> --}}
+
+
 <script>
 
 

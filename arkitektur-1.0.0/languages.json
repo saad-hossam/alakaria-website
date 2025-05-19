@@ -1,0 +1,162 @@
+{
+  "en": {
+    "header": {
+      "title": "Welcome to our website!",
+      "nav": {
+        "home": "Home",
+        "services": "Services",
+        "contact": "Contact Us",
+        "about": "About Us",
+        "pages": "Pages"
+      }
+    },
+    "footer": {
+      "address": {
+        "title": "Address",
+        "location": "123 Street, New York, USA",
+        "phone": "+012 345 67890",
+        "email": "info@example.com"
+      },
+      "services": {
+        "title": "Services",
+        "links": [
+          "Architecture",
+          "3D Animation",
+          "House Planning",
+          "Interior Design",
+          "Construction"
+        ]
+      },
+      "quickLinks": {
+        "title": "Quick Links",
+        "links": {
+          "home": "Home",
+          "services": "Services",
+          "contact": "Contact Us",
+          "about": "About Us",
+          "pages": "Pages"
+        }
+      },
+      "newsletter": {
+        "title": "Newsletter",
+        "description": "Dolor amet sit justo amet elitr clita ipsum elitr est.",
+        "placeholder": "Your email",
+        "buttonText": "SignUp"
+      },
+      "copyright": {
+        "text": "&copy; Your Site Name, ",
+        "designedBy": "Designed By ",
+        "allRightReserved": "  All Right Reserved. ",
+        "links": {
+          "siteName": "#",
+          "designedBy": "",
+          "distributedBy": ""
+        }
+      }
+    },
+
+    "page_header": {
+      "breadcrumb_title": "Contact Us",
+      "breadcrumb_home": "Home",
+      "breadcrumb_pages": "Pages",
+      "breadcrumb_contact": "Contact Us"
+    },
+    "contact_section": {
+      "section_title": "Contact Us",
+      "section_subtitle": "If You Have Any Query, Please Feel Free Contact Us",
+      "address_label": "Address",
+      "address": "123 Street, New York, USA",
+      "phone_label": "Call Us Now",
+      "phone_number": "+012 345 6789",
+      "email_label": "Mail Us Now",
+      "email": "info@example.com",
+      "contact_form_inactive": "The contact form is currently inactive. Get a functional and working contact form with Ajax & PHP in a few minutes. Just copy and paste the files, add a little code and you're done.",
+      "contact_form_download": "Download Now",
+      "form": {
+        "name_placeholder": "Your Name",
+        "email_placeholder": "Your Email",
+        "subject_placeholder": "Subject",
+        "message_placeholder": "Leave a message here",
+        "submit_button": "Send Message"
+      }
+    }
+  },
+  "ar": {
+    "header": {
+      "title": "مرحبا بك في موقعنا!",
+      "nav": {
+        "home": "الرئيسية",
+        "services": "خدماتنا",
+        "contact": "اتصل بنا",
+        "about": "معلومات عنا",
+        "pages": "صفحات"
+      }
+    },
+    "footer": {
+      "address": {
+        "title": "العنوان"
+      },
+      "services": {
+        "title": "خدمات",
+        "links": [
+          "الهندسة المعمارية",
+          "الرسوم المتحركة ثلاثية الأبعاد",
+          "تخطيط المنزل",
+          "تصميم داخلي",
+          "البناء"
+        ]
+      },
+      "quickLinks": {
+        "title": "روابط سريعة",
+        "links": {
+          "home": "الرئيسية",
+          "services": "خدماتنا",
+          "contact": "اتصل بنا",
+          "about": "معلومات عنا",
+          "pages": "صفحات"
+        }
+      },
+      "newsletter": {
+        "title": "النشرة الإخبارية",
+        "description": "دولور أميت سيت جوستو أميت إلتر كليتا إيبسوم إلتر إيست.",
+        "placeholder": "بريدك الالكتروني",
+        "buttonText": "اشترك"
+      },
+      "copyright": {
+        "text": "&copy; اسم موقعك،   .",
+        "designedBy": "تصميم بواسطة  ",
+        "allRightReserved": " جميع الحقوق محفوظة. ",
+        "links": {
+          "siteName": "#",
+          "designedBy": "",
+          "distributedBy": ""
+      }
+    }
+    },
+    "page_header": {
+      "breadcrumb_title": "اتصل بنا",
+      "breadcrumb_home": "الرئيسية",
+      "breadcrumb_pages": "الصفحات",
+      "breadcrumb_contact": "اتصل بنا"
+    },
+    "contact_section": {
+      "section_title": "اتصل بنا",
+      "section_subtitle": "إذا كان لديك أي استفسار، لا تتردد في الاتصال بنا",
+      "address_label": "العنوان",
+      "address": "123 شارع، نيويورك، الولايات المتحدة الأمريكية",
+      "phone_label": "اتصل بنا الآن",
+      "phone_number": "+012 345 6789",
+      "email_label": "راسلنا الآن",
+      "email": "info@example.com",
+      "contact_form_inactive": "نموذج الاتصال غير نشط حاليًا. احصل على نموذج اتصال وظيفي يعمل مع Ajax و PHP في بضع دقائق. فقط قم بنسخ الملفات ولصقها، وأضف بعض الأكواد وستكون قد انتهيت.",
+      "contact_form_download": "تحميل الآن",
+      "form": {
+        "name_placeholder": "اسمك",
+        "email_placeholder": "بريدك الإلكتروني",
+        "subject_placeholder": "الموضوع",
+        "message_placeholder": "اترك رسالة هنا",
+        "submit_button": "إرسال الرسالة"
+      }
+    }
+  }
+}

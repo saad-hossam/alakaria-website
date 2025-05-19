@@ -26,7 +26,6 @@
         </div>
     </div>
     @can('service-create')
-
     <div class="d-flex my-xl-auto right-content">
         <a class="btn btn-primary btn-block" href="{{ route('services.create') }}">اضافه خدمة</a>
     </div>
@@ -98,9 +97,11 @@
                             <tr>
                                 <th class="wd-10p border-bottom-0">#</th>
                                 <th class="wd-15p border-bottom-0">اسم الخدمة</th>
+                                <th class="wd-15p border-bottom-0">الوصف</th>
                                 <th class="wd-15p border-bottom-0">المحتوى </th>
                                 <th class="wd-15p border-bottom-0">صورة الخدمة</th>
-                                <th class="wd-15p border-bottom-0">عمليات </th>
+                                <th class="wd-15p border-bottom-0">حالة الخدمة</th>
+                                <th class="wd-15p border-bottom-0">العمليات </th>
 
                             </tr>
                         </thead>
@@ -109,11 +110,11 @@
                              @foreach ($services as $service)
                                 <tr>
                                     <td>{{ $service->id }}</td>
-                                    <td>{{ $service->name }}</td>
-                                    <td>{{ $service->description }}</td>
-                                    <td>{{ $service->icon }}</td>
+                                    <td>{!! $service->name !!}</td>
+                                    <td>{!! $service->description !!}</td>
+                                    <td>{!! $service->body !!}</td>
 
-                                    {{-- <td><img src="{{ URL::asset('images/services/' . $service->image) }}" alt=""></td> --}}
+                                    <td><a href="{{ asset('images/services/' . $service->image) }}" target="_blank"><img src="{{ asset('images/services/' . $service->image) }}" alt=""></a></td>
                                     <td>
                                         @if ($service->status == 'active')
                                             <span class="label text-success  d-flex  " style="margin-right: 50px;">
@@ -134,7 +135,7 @@
                                         @endcan
                                         @can('service-delete')
                                         <a class="modal-effect btn btn-sm btn-danger" data-effect="effect-scale"
-                                            data-user_id="{{ $service->id }}" data-username="{{ $service->name }}"
+                                            data-user_id="{{ $service->id }}" data-username="{!! $service->name !!}"
                                             data-toggle="modal" href="#modaldemo8" title="حذف"><i class="las la-trash"></i></a>
 
                                         @endcan

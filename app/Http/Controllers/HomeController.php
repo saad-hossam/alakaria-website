@@ -1,11 +1,13 @@
 <?php
 namespace App\Http\Controllers;
 
+use App\Models\Slider;
 use App\Models\Gallary;
-use App\Models\Product;
+use App\Models\History;
+use App\Models\Partner;
+use App\Models\Project;
 use App\Models\Service;
 use App\Models\Department;
-
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -17,81 +19,86 @@ class HomeController extends Controller
 
     public function index()
     {
-        $gallaries = Gallary::all();
-        $sliders = Gallary::paginate(5);
-        $departments = Department::with('translations')->get(); // Departments with translations
-        $products = Product::with('translations')->paginate(3); // Paginate products
-
-        $services = Service::with('translations')->paginate(3); // Paginate services
+        $partners = Partner::active()->get();
+        $sliders = Slider::active()->with('translations')->get();
+        $departments = Department::active()->with('translations')->get(); // Departments with translations
+        $projects = Project::active()->with('translations')->paginate(4); // Paginate projects
+        $services = Service::active()->paginate(3); // Paginate services
 
         return view('Front.home', [
-            'services' => $services,
-            'gallaries' => $gallaries,
             'sliders' => $sliders,
-            'products' => $products,
-            'departments' => $departments
+            'projects' => $projects,
+            'departments' => $departments,
+            'partners'=>$partners,
+           'services' => $services,
         ]);
     }
 
-    public function gallary()
+    public function service_details($id)
     {
-        $gallaries = Gallary::all();
-        return view('Front.gallary', ['gallaries' => $gallaries]);
+        // Fetch service with its translations (eager loading)
+        $service = Service::with('translations')->find($id);
+        return view('Front.service_details', ['service' => $service]);
     }
-
-    public function products()
+    public function contact()
     {
-        $products = Product::with('translations')->paginate(9);
-        $departments = Department::all();
-        return view('Front.products', ['products' => $products, 'departments' => $departments]);
+        return view('Front.contact');
+    }
+    public function services()
+    {
+        $services = Service::active()->with('translations')->get();
+        return view('Front.services', compact('services'));
     }
 
-    // Show products by department
-    public function showProductsByDepartment($departmentId = null)
-{
-    // If a department is selected, fetch the products related to that department
-    if ($departmentId) {
-        // Fetch the department with its products and translations (eager loading)
-        $department = Department::with('translations')->findOrFail($departmentId);
-        $categories=$department->categories()->pluck('id')->toArray();        ;
-        // dd($categories);
-        $products = Product::whereRelation('category',fn($q) => $q->whereIn('id',$categories))->get();
-        // dd($products); // Get products for this specific department
-    } else {
-        // If no department is selected, fetch all products
-        $products = Product::with('translations')->get();
+    public function projects_all()
+    {
+        $projects = Project::active()->with('translations')->get();
+        return view('Front.projects', compact('projects'));
     }
 
-    // Fetch all departments for the sidebar
-    $departments = Department::all();
 
-    // Return the view with products and departments
-    return view('Front.products', compact('products', 'departments'));
-}
-
-
-public function product_details($id)
-{
-    // Fetch product with related photos
-    $product = Product::with('photos')->find($id);
-
-    if (!$product) {
-        abort(404, 'Product not found');
+    public function about(){
+        $histories=History::active()->get();
+        return view('Front.about', compact('histories'));
     }
 
-    // Debug photos data
-    // dd($product->photos);
+    public function projects()
+    {
+        $projects = project::active()->with('translations')->get();
+        $departments = Department::active()->all();
+        return view('Front.projects', ['projects' => $projects, 'departments' => $departments]);
+    }
+    public function projects_by_department($department_id)
+    {
+        // Fetch the department and its related projects
+        $department = Department::find($department_id);
 
-    return view('Front.product_details', [
-        'product' => $product,
+        if (!$department) {
+            abort(404, 'Department not found');
+        }
+
+        // Get all projects related to this department
+        $projects = $department->projects;
+
+        return view('Front.projects_by_department', [
+            'department' => $department,
+            'projects' => $projects,
+        ]);
+    }
+
+    public function project_details($id)
+    {
+    // Fetch project with related photos
+    $project = Project::find($id);
+    if (!$project) {
+        abort(404, 'project not found');
+    }
+    return view('Front.project_details', [
+        'project' => $project,
         'departments' => Department::all(),
     ]);
 }
 
 
-    public function services()
-    {
-        $services = Service::with('translations')->get();
-        return view('Front.services', compact('services'));
-    }
+
 }

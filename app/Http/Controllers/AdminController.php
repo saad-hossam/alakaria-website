@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-// use App\Models\Visitor;
 use Carbon\Carbon;
+// use App\Models\Visitor;
+use Illuminate\Http\Request;
 class AdminController extends Controller
 {
     /**
@@ -32,6 +32,7 @@ class AdminController extends Controller
      */
     public function dashboard()
     {
+
         // dd(10);
         // $visits = Visitor::all();
         // $totalVisitors=$visits->count();

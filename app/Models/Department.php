@@ -18,6 +18,9 @@ class Department extends Model
     public $translatedAttributes=['name'];
     protected $fillable = [
         'name',
+        'status',
+        'image',
+        // 'translations' // Assuming this is the pivot table name
     ];
 
     // protected static function boot()
@@ -32,14 +35,15 @@ class Department extends Model
     }
 
     // Department.php
-public function categories()
-{
-    return $this->hasMany(Category::class);
-}
-public function products()
-    {
-        return $this->hasMany(Product::class);
-    }
 
+public function projects()
+    {
+        return $this->hasMany(Project::class);
+    }
+    public function scopeActive($query)
+    {
+        return $query->where('status', 'active');
+
+    }
 
 }

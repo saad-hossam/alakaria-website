@@ -1,20 +1,33 @@
 <?php
+// resources/lang/en/footer.php
+
 return [
-    "office_title" => "Our Office",
-    "address" => "Al Qanatir al Khayriyah, Egypt",
-    "phone" => "+012 345 67890",
-    "email" => "info@example.com",
-    "quick_links" => "Quick Links",
-    "about_us" => "About Us",
-    "contact_us" => "Contact Us",
-    "services" => "Our Services",
-    "terms" => "Terms & Conditions",
-    "support" => "Support",
-    "working_hours" => "Working Hours",
-    "saturday_thursday" => "Saturday - Thursday",
-    "working_time" => "09:00 AM - 06:00 PM",
-    "friday" => "Friday",
-    "closed" => "Closed",
-    "all_rights_reserved" => "All rights reserved.",
-    "design_by" => "Designed by Saad & Salem",
+    'address' => [
+        'title' => 'Address',
+    ],
+    'services' => [
+        'title' => 'Services',
+    ],
+    'quickLinks' => [
+        'title' => 'Quick Links',
+        'links' => [
+            'home' => 'Home',
+            'contact' => 'Contact',
+            'about' => 'About Us',
+            'services' => 'Services',
+        ],
+    ],
+    'newsletter' => [
+        'title' => 'Our Location',
+        'description' => 'Subscribe to our newsletter for the latest updates.',
+        'placeholder' => 'Enter your email...',
+        'buttonText' => 'Subscribe',
+    ],
+    'copyright' => [
+        'title' => 'All Rights Reserved',
+    ],
+    'links' => [
+        'siteName' => 'Your Company Name',
+        'designedBy' => 'Designed by HTML Codex',
+    ],
 ];

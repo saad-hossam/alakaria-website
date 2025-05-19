@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('locale');
             $table->string('name');
             $table->text('description');
+            $table->text('body');
             $table->unique(['service_id','locale']);
             $table->foreignId('service_id')->onDelete('cascade');
             $table->timestamps();

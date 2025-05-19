@@ -24,6 +24,10 @@ return[
     'product_detail'=>'Our dairy products for a healthy life',
     'house'=>'Home',
     'page_title'=>'Page',
+    'heading' => [
+        'title' => 'Our Partners',
+        'subtitle' => 'Our partners in success',
+    ],
 
 
 

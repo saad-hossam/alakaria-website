@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('services', function (Blueprint $table) {
             $table->id();
-            $table->string('icon');
+            $table->string('image');
             $table->enum('status', [ 'active', 'disabled']);
             $table->timestamps();
         });

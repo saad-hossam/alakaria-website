@@ -10,12 +10,13 @@ class Service extends Model
 {
     use Translatable ;
     use HasFactory;
-    public $translatedAttributes=['name','description'];
+    public $translatedAttributes=['name','description','body'];
     protected $fillable =[
         'name',
         'description',
-        'icon',
-       'status',
+        'body',
+        'image',
+        'status',
     ];
 
     // protected static function boot()
@@ -29,6 +30,10 @@ class Service extends Model
     return $this->hasMany(ServiceTranslation::class);
 }
 
+public function scopeActive($query)
+    {
+        return $query->where('status', 'active');
 
+    }
 
 }

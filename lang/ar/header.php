@@ -5,12 +5,14 @@ return[
     'our_profile'=>'اعمالنا',
     'our_services'=>'خدماتنا',
     'our_team'=>'فريقنا',
+    'our_departments'=>'أقسامنا',
     'gallary'=>'المعرض',
     'our_vision'=>'رؤيتنا',
     'our_message'=>'رسالتنا',
     'our_goal'=>'هدفنا',
 
-    'about_us'=>'عن المصنع',
+
+    'about_us'=>'عن الشركة',
     'contact_us'=>'تواصل معنا',
     'projects'=>'المشروعات',
     'message'=>'الرساله',

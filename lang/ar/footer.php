@@ -1,21 +1,33 @@
 <?php
-return [
-    "office_title" => "مكتبنا",
-    "address" => "القناطر الخيرية، مصر",
-    "phone" => "+012 345 67890",
-    "email" => "info@example.com",
-    "quick_links" => "روابط سريعة",
-    "about_us" => "معلومات عنا",
-    "contact_us" => "اتصل بنا",
-    "services" => "خدماتنا",
-    "terms" => "الشروط والأحكام",
-    "support" => "الدعم",
-    "working_hours" => "ساعات العمل",
-    "saturday_thursday" => "السبت - الخميس",
-    "working_time" => "09:00 ص - 06:00 م",
-    "friday" => "الجمعة",
-    "closed" => "مغلق",
-    "all_rights_reserved" => "جميع الحقوق محفوظة.",
-    "design_by" => "تصميم بواسطة سعد و سالم",
+// resources/lang/ar/footer.php
 
+return [
+    'address' => [
+        'title' => 'العنوان',
+    ],
+    'services' => [
+        'title' => 'الخدمات',
+    ],
+    'quickLinks' => [
+        'title' => 'روابط سريعة',
+        'links' => [
+            'home' => 'الرئيسية',
+            'contact' => 'اتصل بنا',
+            'about' => 'من نحن',
+            'services' => 'الخدمات',
+        ],
+    ],
+    'newsletter' => [
+        'title' => ' موقعنا',
+        'description' => 'اشترك في نشرتنا الإخبارية للحصول على آخر التحديثات.',
+        'placeholder' => 'أدخل بريدك الإلكتروني...',
+        'buttonText' => 'اشترك',
+    ],
+    'copyright' => [
+        'title' => 'جميع الحقوق محفوظة',
+    ],
+    'links' => [
+        'siteName' => 'اسم شركتك',
+        'designedBy' => 'تصميم بواسطة HTML Codex',
+    ],
 ];

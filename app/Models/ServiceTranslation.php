@@ -17,7 +17,7 @@ class ServiceTranslation extends Model
 
      // Define the fillable fields for mass-assignment
      protected $fillable = [
-         'service_id', 'locale', 'name','description','icon'
+         'service_id', 'locale', 'name','description','image','body'
      ];
 
      // A translation belongs to one department

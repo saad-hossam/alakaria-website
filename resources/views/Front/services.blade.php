@@ -18,33 +18,41 @@
     <!-- Page Header End -->
 
 
-    <div class="container-xxl py-5">
-        <div class="container">
-            <div class="text-center mx-auto pb-4 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
-                <p class="section-title bg-white text-center text-primary px-3">{{ trans('services.services_title') }}</p>
-                <h1 class="mb-5">{{ trans('services.services_subtitle') }}</h1>
-            </div>
-            <div class="row gy-5 gx-4">
-                @foreach ($services as $service)
-                    <div class="col-lg-4 col-md-6 pt-5 wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="service-item d-flex h-100">
-                            <div class="service-img">
-                                <img class="img-fluid"  src="{{ asset('assets/front/img/service-1.jpg') }}" alt="{{trans('pagination.alt_title')}}">
-                            </div>
-                            <div class="service-text p-5 pt-0">
-                                <div class="service-icon">
-                                    <i class="{{ $service->icon }}" style="margin:10px;font-size: 5rem; color: var(--primary);"></i>
-                                </div>
-                                <h5 class="mb-3">{{ $service->translate(app()->getLocale())->name }}</h5>
-                                <p class="mb-4">{{ $service->translate(app()->getLocale())->description }}</p>
-                                <a class="btn btn-square rounded-circle" href=""><i class="bi bi-chevron-double-right"></i></a>
-                            </div>
-                        </div>
+<!-- Service Start -->
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+            <h4 class="section-title">{{trans('services.services_title')}}</h4>
+            <h6 class="display-6 mb-4">{{trans('services.services_subtitle')}}</h6>
+        </div>
+        <div class="row g-4">
+            <!-- Always Visible Services -->
+            @foreach ($services as $service )
+
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="service-item d-flex position-relative text-center h-100">
+                    <img class="bg-img  " src="{{ asset('img/service-2.jpg') }}" alt="">
+                    <div class="service-text  w-100">
+                    <img class="mb-4 pt-3" src="{{ asset('images/services/'. $service->image) }}" alt="Icon">
+                    <h3 class="mb-3">{!! $service->translate(app()->getLocale())->name !!}</h3>
+                    <p class="mb-4">{!! Str::words($service->translate(app()->getLocale())->description, 20, '...') !!}</p> 
+                                       <a class="btn mb-4" href="{{route('service_details',$service->id)}}"><i class="fa fa-plus text-primary  fs-2"></i>{{trans('about.read_more')}}</a>
                     </div>
-                @endforeach
+                    <div>
+
+                    </div>
+                </div>
             </div>
+            @endforeach
+
+        </div>
+        <!-- Show More Button -->
+        <div class="text-center mt-4">
+            <button class="btn btn-primary" id="toggle-more">{{trans('projects.read_more')}}</button>
         </div>
     </div>
+</div>
+<!-- Service End -->
 
 
 

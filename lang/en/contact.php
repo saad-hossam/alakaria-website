@@ -1,23 +1,29 @@
 <?php
-return[
-    'call_details' =>'Contact details',
-    'functional_form'=>'Do you need a functional contact form?',
-    'head_of_form'=>'If you have any questions, please contact us',
-    'contact_us'=>'Contact Us',
-    'write_us'=>'Write Us',
-    'call_us'=>'Call Us',
-    'drop_by_our_office_at'=>'drop by our factory at',
-    'full_name'=>'Full Name',
-    'email_address'=>'Email Address',
-    'write_us_message'=>'Write Us Message...',
-    'phone'=>'Phone',
-    'fax'=>'Fax',
-    'email'=>'email',
-    'subject'=>'Subject',
-    'message'=>'Message',
-    'write_message_here'=>'Write your message here',
+// resources/lang/en/contact.php
 
-    'or'=>'or',
-    'egypt'=>'Arab-Republic of Egypt',
-    'address'=>'Cairo-Ismailia Agricultural Road, Abu Zaabal, Qalyubia,before the railway crossing ',
+return [
+    'email_label1' => 'Mail Us Now',
+
+    'page_header' => [
+        'breadcrumb_title' => 'Contact Us',
+        'breadcrumb_home' => 'Home',
+        'breadcrumb_pages' => 'Pages',
+        'breadcrumb_contact' => 'Contact Us',
+    ],
+    'contact_section' => [
+        'section_title' => 'Our Location',
+        'section_subtitle' => 'If You Have Any Query, Please Feel Free Contact Us',
+        'address_label' => 'Address',
+        'phone_label' => 'Call Us Now',
+        'email_label' => 'Mail Us Now',
+        'contact_form_inactive' => 'The contact form is currently inactive. Get a functional and working contact form with Ajax & PHP in a few minutes. Just copy and paste the files, add a little code and you\'re done.',
+        'contact_form_download' => 'Download Now',
+        'form' => [
+            'name_placeholder' => 'Your Name',
+            'email_placeholder' => 'Your Email',
+            'subject_placeholder' => 'Subject',
+            'message_placeholder' => 'Leave a message here',
+            'submit_button' => 'Send Message',
+        ],
+    ],
 ];

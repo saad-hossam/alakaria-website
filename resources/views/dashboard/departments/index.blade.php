@@ -22,7 +22,7 @@
     <div class="my-auto">
         <div class="d-flex">
             <h4 class="content-title mb-0 my-auto">الاقسام</h4><span class="text-muted mt-1 tx-13 mr-2 mb-0">/ قائمة
-                البنوك</span>
+                الاقسام</span>
         </div>
     </div>
     @can('department-create')
@@ -98,7 +98,9 @@
                             <tr>
                                 <th class="wd-10p border-bottom-0">#</th>
                                 <th class="wd-15p border-bottom-0">اسم القسم</th>
-                                <th class="wd-15p border-bottom-0">عمليات </th>
+                                <th class="wd-15p border-bottom-0">صورة القسم</th>
+                                <th class="wd-15p border-bottom-0">حالة القسم</th>
+                                <th class="wd-15p border-bottom-0">العمليات </th>
 
                             </tr>
                         </thead>
@@ -107,7 +109,8 @@
                              @foreach ($departments as $department)
                                 <tr>
                                     <td>{{ $department->id }}</td>
-                                    <td>{{ $department->name }}</td>
+                                    <td>{!! $department->name !!}</td>
+                                    <td><a href="{{ asset('images/departments/' . $department->image) }}" target="_blank"><img src="{{ asset('images/departments/' . $department->image) }}" alt=""></a></td>
                                     <td>
                                         @if ($department->status == 'active')
                                             <span class="label text-success  d-flex  " style="margin-right: 50px;">

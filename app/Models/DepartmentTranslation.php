@@ -14,7 +14,7 @@ class DepartmentTranslation extends Model
 
     // Define the fillable fields for mass-assignment
     protected $fillable = [
-        'department_id', 'locale', 'name'
+        'department_id', 'locale', 'name','image'
     ];
 
     // A translation belongs to one department

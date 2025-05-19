@@ -1,152 +1,156 @@
 @extends('layouts.dashbord.master')
+
 @section('css')
-    <!--- Internal Select2 css-->
+    <!-- Internal Select2 CSS -->
     <link href="{{ URL::asset('assets/admin/plugins/select2/css/select2.min.css') }}" rel="stylesheet">
+    <link href="{{ URL::asset('assets/admin/plugins/quill/quill.snow.css') }}" rel="stylesheet">
+    <link href="{{ URL::asset('assets/admin/plugins/quill/quill.bubble.css') }}" rel="stylesheet">
+    <!-- Internal File Upload CSS -->
+    <link href="{{ URL::asset('assets/admin/plugins/fileuploads/css/fileupload.css') }}" rel="stylesheet" type="text/css" />
+    <!-- Internal Fancy Uploader CSS -->
+    <link href="{{ URL::asset('assets/admin/plugins/fancyuploder/fancy_fileupload.css') }}" rel="stylesheet" />
+    <!-- CKEditor -->
+    <script src="https://cdn.ckeditor.com/ckeditor5/38.0.1/classic/ckeditor.js"></script>
 @endsection
+
 @section('page-header')
-    <!-- breadcrumb -->
+    <!-- Breadcrumb -->
     <div class="breadcrumb-header justify-content-between">
         <div class="my-auto">
             <div class="d-flex">
-                <h4 class="content-title mb-0 my-auto">اضافه خدمة</h4>
+                <h4 class="content-title mb-0 my-auto">تعديل الخدمة</h4>
             </div>
         </div>
         @can('service-list')
-
-        <div class="d-flex my-xl-auto right-content">
-            <a class="btn btn-primary btn-block" href="{{ route('services.index') }}">جميع الخدمات</a>
-
-        </div>
+            <div class="d-flex my-xl-auto right-content">
+                <a class="btn btn-primary btn-block" href="{{ route('services.index') }}">جميع الخدمات</a>
+            </div>
         @endcan
     </div>
-    <!-- breadcrumb -->
+    <!-- Breadcrumb -->
 @endsection
-
 
 @section('content')
     <div class="row">
         <div class="col-lg-12 col-md-12">
             <div class="card">
                 <div class="card-body">
+                    <!-- Display Errors -->
                     @if ($errors->any())
-                        @foreach ($errors->all() as $error)
-                            <div class="alert alert-info">{{ $error }}</div>
-                        @endforeach
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
                     @endif
 
-
-
-
-
-
-                    <form method="post" action="{{ route('services.update',$service->id) }}" class="needs-validation ">
+                    <!-- Update Form -->
+                    <form method="POST" action="{{ route('services.update', $service->id) }}" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
 
+                        <!-- Translations -->
                         <div class="card">
                             <div class="card-header">
                                 <strong>{{ __('words.translations') }}</strong>
                             </div>
-                            <div class="card-block">
-                                <ul class="nav nav-tabs" id="myTab" role="tablist">
-
+                            <div class="card-body">
+                                <ul class="nav nav-tabs" id="language-tabs" role="tablist">
                                     @foreach (config('app.languages') as $key => $lang)
-                                    <li class="nav-item">
-                                        <a class="nav-link @if ($loop->index == 0) active @endif" id="home-tab" data-toggle="tab" href="#{{ $key }}" role="tab" aria-controls="home" aria-selected="true">{{ $lang }}</a>
-                                    </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link @if ($loop->first) active @endif"
+                                               id="{{ $key }}-tab"
+                                               data-toggle="tab"
+                                               href="#{{ $key }}"
+                                               role="tab"
+                                               aria-controls="{{ $key }}"
+                                               aria-selected="{{ $loop->first ? 'true' : 'false' }}">
+                                                {{ $lang }}
+                                            </a>
+                                        </li>
                                     @endforeach
-
                                 </ul>
-                                <div class="tab-content" id="myTabContent">
+                                <div class="tab-content" id="language-tabs-content">
                                     @foreach (config('app.languages') as $key => $lang)
-                                    <div class="tab-pane mt-3 fade @if ($loop->index == 0) show active in @endif" id="{{ $key }}" role="tabpanel" aria-labelledby="home-tab">
-                                        <br>
-                                        <div class="form-group mt-3 col-md-12">
-                                            <label> الاسم-- {{ $lang }}</label>
-                                            <input type="text" name="{{$key}}[name]" class="form-control" placeholder="الاسم" value="{{ $service->translate($key)->name }}">
+                                        <div class="tab-pane fade @if ($loop->first) show active @endif"
+                                             id="{{ $key }}"
+                                             role="tabpanel"
+                                             aria-labelledby="{{ $key }}-tab">
+                                            <div class="form-group mt-3">
+                                                <label> الاسم ({{ $lang }})</label>
+                                                <textarea name="{{ $key }}[name]" class="form-control editor" id="name-{{ $key }}">{{ old($key . '.name', $service->translate($key)->name ?? '') }}</textarea>
+                                            </div>
+                                            <div class="form-group mt-3">
+                                                <label> الوصف ({{ $lang }})</label>
+                                                <textarea name="{{ $key }}[description]" class="form-control editor" id="description-{{ $key }}">{{ old($key . '.description', $service->translate($key)->description ?? '') }}</textarea>
+                                            </div>
+                                            <div class="form-group mt-3">
+                                                <label> المحتوى ({{ $lang }})</label>
+                                                <textarea name="{{ $key }}[body]" class="form-control editor" id="body-{{ $key }}">{{ old($key . '.body', $service->translate($key)->body ?? '') }}</textarea>
+                                            </div>
                                         </div>
-
-                                        <div class="form-group mt-3 col-md-12">
-                                            <label>  المحتوى-- {{ $lang }}</label>
-                                            <input type="text" name="{{$key}}[description]" value="{{ $service->translate($key)->description }}" class="form-control" placeholder="المحتوى">
-                                        </div>
-
-                                    </div>
                                     @endforeach
                                 </div>
                             </div>
                         </div>
 
-                        <div class="row row-xs formgroup-wrapper">
-                            <div class="col-md-6 mg-t-20 mg-md-t-0">
-                                <label class="form-lable h5" for="icon">الصوره</label>
-                                <div class="form-group">
-                                    <input name="icon" type="text" class="form-control" value="{{ $service->icon}}" />
-                                </div>
+                        <!-- Image Upload and Status -->
+                        <div class="row mt-4">
+                            <!-- Image Upload -->
+                            <div class="col-md-6">
+                                <label>الصورة</label>
+                                @if ($service->image)
+                                    <div class="form-group">
+                                        <label>الصورة الحالية:</label>
+                                        <a href="{{ asset('images/services/' . $service->image) }}" target="_blank">
+                                            <img src="{{ asset('images/services/' . $service->image) }}"
+                                                 alt="Service Image"
+                                                 class="img-thumbnail"
+                                                 width="100">
+                                        </a>
+                                    </div>
+                                @endif
+                                <input name="image" type="file" class="dropify" data-height="200" />
                             </div>
 
-                            <div class="col-md-6 mg-t-20 mg-md-t-0">
-                                <label class="form-lable h5" for="status">حاله العميل</label>
-                                <div class="form-group">
-                                    <select class="form-control select2-search" id="status" name="status">
-                                        @if ($service->status=='active')
-                                        <option value="active" selected>مفعل</option>
-                                        <option value="disabled" >غير مفعل</option>
-
-                                        @else
-                                        <option value="active" >مفعل</option>
-                                        <option value="disabled" selected>غير مفعل</option>
-                                        @endif
-
-                                    </select>
-                                </div>
+                            <!-- Status -->
+                            <div class="col-md-6">
+                                <label>حالة الخدمة</label>
+                                <select class="form-control select2" name="status">
+                                    <option value="active" {{ $service->status == 'active' ? 'selected' : '' }}>مفعل</option>
+                                    <option value="disabled" {{ $service->status == 'disabled' ? 'selected' : '' }}>غير مفعل</option>
+                                </select>
                             </div>
+                        </div>
 
-                        <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-                            <button class="btn btn-main-primary pd-x-20" type="submit">تاكيد</button>
+                        <!-- Submit Button -->
+                        <div class="text-center mt-4">
+                            <button class="btn btn-primary" type="submit">تأكيد</button>
                         </div>
                     </form>
-
                 </div>
             </div>
         </div>
     </div>
 @endsection
+
 @section('js')
-    <!--Internal  Select2 js -->
+    <!-- Internal Select2 JS -->
     <script src="{{ URL::asset('assets/admin/plugins/select2/js/select2.min.js') }}"></script>
-    <!-- Internal Jquery.steps js -->
-    <script src="{{ URL::asset('assets/admin/plugins/jquery-steps/jquery.steps.min.js') }}"></script>
-    <script src="{{ URL::asset('assets/admin/plugins/parsleyjs/parsley.min.js') }}"></script>
-    <!--Internal  Form-wizard js -->
-    {{-- <script src="{{URL::asset('assets/admin/js/form-wizard.js')}}"></script> --}}
+    <script src="{{ URL::asset('assets/admin/plugins/fileuploads/js/fileupload.js') }}"></script>
+    <script src="{{ URL::asset('assets/admin/plugins/fileuploads/js/file-upload.js') }}"></script>
+    <!-- CKEditor Initialization -->
     <script>
-        ClassicEditor
-            .create(document.querySelector('#client_address'))
-            .then(editor => {
-                console.log(editor);
-            })
-            .catch(error => {
-                console.error(error);
-            });
+        document.querySelectorAll('.editor').forEach(editor => {
+            ClassicEditor.create(editor).catch(error => console.error(error));
+        });
 
-            ClassicEditor
-            .create(document.querySelector('#client_note'))
-            .then(editor => {
-                console.log(editor);
-            })
-            .catch(error => {
-                console.error(error);
-            });
-            ClassicEditor
-            .create(document.querySelector('#client_stats_note'))
-            .then(editor => {
-                console.log(editor);
-            })
-            .catch(error => {
-                console.error(error);
-            });
+        // Initialize Dropify
+        $('.dropify').dropify();
 
+        // Initialize Select2
+        $('.select2').select2();
     </script>
-
 @endsection

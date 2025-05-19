@@ -2,9 +2,10 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Seeder;
 use App\Models\User;
+use Illuminate\Database\Seeder;
 use Spatie\Permission\Models\Role;
+use Illuminate\Support\Facades\Hash;
 use Spatie\Permission\Models\Permission;
 
 class CreateAdminUserSeeder extends Seeder
@@ -16,20 +17,27 @@ class CreateAdminUserSeeder extends Seeder
      */
     public function run()
     {
-        $user = User::create([
-            'name' => 'salimeslam',
-            'email' => 'salimeslam55@gmail.com',
-            'password' => bcrypt('123456'),
-            'roles_name' => ["super-admin"],
-            'Status' => 'مفعل',
-            ]);
+        // Check if the user already exists
+        $user = User::firstOrCreate(
+            ['email' => 'salimeslam55@gmail.com'], // Check condition
+            [   // Attributes to set if user doesn't exist
+                'name' => 'salimeslam',
+                'password' => Hash::make('123456'), // Secure password hashing
+                'roles_name' => ['super-admin'],
+                'Status' => 'مفعل',
+            ]
+        );
 
-            $role = Role::create(['name' => 'super-admin']);
+        // Check if the role already exists
+        $role = Role::firstOrCreate(['name' => 'super-admin']);
 
-            $permissions = Permission::pluck('id','id')->all();
+        // Get all permissions
+        $permissions = Permission::pluck('id', 'id')->all();
 
-            $role->syncPermissions($permissions);
+        // Assign all permissions to the role
+        $role->syncPermissions($permissions);
 
-            $user->assignRole([$role->id]);
+        // Assign the role to the user
+        $user->assignRole($role);
     }
 }

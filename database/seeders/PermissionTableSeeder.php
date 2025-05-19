@@ -1,4 +1,5 @@
 <?php
+
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
@@ -13,47 +14,59 @@ class PermissionTableSeeder extends Seeder
      */
     public function run()
     {
+        // Delete all existing permissions
+        // Permission::query()->delete();
+
+        // List of permissions to seed
         $permissions = [
+           'user-list',
+           'user-create',
+           'user-edit',
+           'user-delete',
+
            'role-list',
            'role-create',
            'role-edit',
            'role-delete',
-
-           'product-list',
-           'product-create',
-           'product-edit',
-           'product-delete',
-
-           'gallary-list',
-           'gallary-create',
-           'gallary-edit',
-           'gallary-delete',
-
-           'service-list',
-           'service-create',
-           'service-edit',
-           'service-delete',
-
-           'category-list',
-           'category-create',
-           'category-edit',
-           'category-delete',
 
            'department-list',
            'department-create',
            'department-edit',
            'department-delete',
 
-           'user-list',
-           'user-create',
-           'user-edit',
-           'user-delete',
+           'project-list',
+           'project-create',
+           'project-edit',
+           'project-delete',
 
+           'service-list',
+           'service-create',
+           'service-edit',
+           'service-delete',
 
+           'slide-list',
+           'slide-create',
+           'slide-edit',
+           'slide-delete',
+
+           'history-list',
+           'history-create',
+           'history-edit',
+           'history-delete',
+
+           'partner-list',
+           'partner-create',
+           'partner-edit',
+           'partner-delete',
+
+           'message-list',
+           'message-create',
+           'message-edit',
+           'message-delete',
         ];
 
         foreach ($permissions as $permission) {
-             Permission::create(['name' => $permission]);
+            Permission::firstOrCreate(['name' => $permission]);
         }
     }
 }
