@@ -104,10 +104,10 @@
     </div>
 </div> --}}
 <!-- Feature End -->
-<hr>
+{{-- <hr> --}}
 
 <!-- Service Start -->
-<div class="container-xxl py-5">
+<div class="container-xxl py-5 mt-5">
     <div class="container">
         <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
             <h4 class="section-title">{{trans('services.services_title')}}</h4>
@@ -136,8 +136,9 @@
         </div>
         <!-- Show More Button -->
         <div class="text-center mt-4">
-            <button class="btn btn-primary" id="toggle-more">{{trans('projects.read_more')}}</button>
-        </div>
+           <a href="{{ route('services') }}" class="btn btn-primary" id="toggle-more"> {{trans('projects.read_more')}}
+           </a>
+                </div>
     </div>
 </div>
 <!-- Service End -->

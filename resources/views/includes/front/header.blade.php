@@ -11,7 +11,7 @@
                 <div class="row gx-0 d-none d-lg-flex px-5">
             <div class="col-lg-5  ">
                 <div class="h-100 d-inline-flex align-items-center py-3 me-3">
-                    <a class="text-body px-2" href="tel:+0123456789"><i class="fa fa-phone-alt text-primary me-4 ps-2 "></i>{{ trans('footer.mobile') }}</a>
+                    <a class="text-body px-2" href="tel:+0123456789"><i class="fa fa-phone-alt text-primary me-2 ps-2 "></i>{{ trans('footer.mobile') }}</a>
                     <a class="text-body px-2" href="mailto:info@example.com"><i class="fa fa-envelope-open text-primary me-2 ps-2"></i>{{ trans('footer.email_address') }}</a>
                 </div>
             </div>

@@ -31,7 +31,7 @@
                     {{ __('footer.services.title') }}
                 </h3>
                 @foreach ($services as $service)
-                    <a class="btn btn-link" href="#">{{ $service->translate(app()->getLocale())->name }}</a>
+                    <a class="btn btn-link" href="#">{!! $service->translate(app()->getLocale())->name !!}</a>
                 @endforeach
             </div>
 

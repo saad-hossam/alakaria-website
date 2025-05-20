@@ -26,10 +26,10 @@ class StoreServiceRequest extends FormRequest
         return [
             'en.name' => 'required|max:256',
             'ar.name' => 'required|max:256',
-            'en.description' => 'required|max:256',
-            'ar.description' => 'required|max:256',
-            'en.body' => 'required|max:256',
-            'ar.body' => 'required|max:256',
+            'en.description' => 'required',
+            'ar.description' => 'required',
+            'en.body' => 'required',
+            'ar.body' => 'required',
             'status' => 'required',
             'image' =>'required|image|mimes:jpeg,png,jpg,gif|max:2048',
         ];

@@ -55,13 +55,13 @@
 <!-- Project Start -->
 <div class="container py-5">
     <div class="container">
-        <div class="row">
+        <div class="row text-center">
             <!-- Project Details -->
 
-            <div class="col-lg-8 mt-1 text-center">
-                <div class="text-start mb-4">
+            <div class=" text-center">
+                <div class="text-center mb-4">
                     <h1 class="display-6">{!! $project->translate(app()->getLocale())->name !!}</h1>
-                    <p class="lead">{!! $project->department->name !!}</p>
+                    <p class="lead">{!! $project->department->translate(app()->getLocale())->name !!}</p>
                     <p>{!! $project->translate(app()->getLocale())->description !!}</p>
                 </div>
             </div>
