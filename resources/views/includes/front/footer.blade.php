@@ -1,32 +1,32 @@
 <!-- Footer Start -->
-<div class="container-fluid bg-dark text-body footer mt-5 pt-5 px-0 wow fadeIn" data-wow-delay="0.1s">
+<div class="container-fluid bg-dark text-body footer  mt-5 pt-5 px-3 wow fadeIn" data-wow-delay="0.1s">
     <div class="container">
         <div class="row g-4">
-            <div class="col-lg-3 col-md-6">
+            <div class="col-lg-4 col-md-6">
                 <h3 class="text-light mb-4" data-translate="footer.address.title">
                     {{ __('footer.address.title') }}
                 </h3>
-                <p class="mb-2">
-                    <i class="fa fa-map-marker-alt text-primary me-3"></i>
-                    123 Street, New York, USA
+                <p class="mb-2" style="font-size:larger">
+                    <i class="fa fa-map-marker-alt  me-3 ps-2"></i>
+{{ trans('footer.address1') }}
                 </p>
-                <p class="mb-2">
-                    <i class="fa fa-phone-alt text-primary me-3"></i>
-                    +012 345 67890
+                <p class="mb-2" style="font-size:larger">
+                    <i class="fa fa-phone-alt  me-3 ps-2"></i>
+                    {{ trans('footer.mobile') }}
                 </p>
-                <p class="mb-2">
-                    <i class="fa fa-envelope text-primary me-3"></i>
-                    info@example.com
+                <p class="mb-2" style="font-size:larger">
+                    <i class="fa fa-envelope  me-3 ps-2"></i>
+{{ trans('footer.email_address') }}
                 </p>
                 <div class="d-flex pt-2">
-                    <a class="btn btn-square btn-outline-body me-1" href="#"><i class="fab fa-twitter"></i></a>
-                    <a class="btn btn-square btn-outline-body me-1" href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-square btn-outline-body me-1" href="#"><i class="fab fa-youtube"></i></a>
-                    <a class="btn btn-square btn-outline-body me-0" href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a class="btn btn-square btn-outline-body me-3" href="#"><i class="fab fa-twitter"></i></a>
+                    <a class="btn btn-square btn-outline-body me-3" href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-square btn-outline-body me-3" href="#"><i class="fab fa-youtube"></i></a>
+                    <a class="btn btn-square btn-outline-body me-3" href="#"><i class="fab fa-linkedin-in"></i></a>
                 </div>
             </div>
 
-            <div class="col-lg-3 col-md-6">
+            <div class="col-lg-2 col-md-6">
                 <h3 class="text-light mb-4" data-translate="footer.services.title">
                     {{ __('footer.services.title') }}
                 </h3>
@@ -35,25 +35,25 @@
                 @endforeach
             </div>
 
-            <div class="col-lg-3 col-md-6">
+            <div class="col-lg-2 col-md-6">
                 <h3 class="text-light mb-4" data-translate="footer.quickLinks.title">
                     {{ __('footer.quickLinks.title') }}
                 </h3>
-                <a class="btn btn-link" href="#" data-translate="footer.quickLinks.links.home">
+                <a class="btn btn-link" href="{{ route('home') }}" data-translate="footer.quickLinks.links.home">
                     {{ __('footer.quickLinks.links.home') }}
                 </a>
-                <a class="btn btn-link" href="#" data-translate="footer.quickLinks.links.contact">
+                <a class="btn btn-link" href="{{ route('contact-us') }}" data-translate="footer.quickLinks.links.contact">
                     {{ __('footer.quickLinks.links.contact') }}
                 </a>
-                <a class="btn btn-link" href="#" data-translate="footer.quickLinks.links.about">
+                <a class="btn btn-link" href="{{ route('about') }}" data-translate="footer.quickLinks.links.about">
                     {{ __('footer.quickLinks.links.about') }}
                 </a>
-                <a class="btn btn-link" href="#" data-translate="footer.quickLinks.links.services">
+                <a class="btn btn-link" href="{{ route('services') }}" data-translate="footer.quickLinks.links.services">
                     {{ __('footer.quickLinks.links.services') }}
                 </a>
             </div>
 
-            <div class="col-lg-3 col-md-6">
+            <div class="col-lg-4 col-md-6">
                 <h3 class="text-light mb-4" data-translate="footer.newsletter.title">
                     {{ __('footer.newsletter.title') }}
                 </h3>

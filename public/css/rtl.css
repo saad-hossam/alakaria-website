@@ -1,6 +1,14 @@
 body{
     direction: rtl;
 }
+@media (max-width: 991.98px) {
+    .top-bar {
+        display: none !important;
+    }
+}
+.links{
+    text-align: left;
+}
 /********** Template CSS **********/
 :root {
     --primary: #B78D65;
@@ -434,7 +442,7 @@ input.check-toggle-round-flat:checked + label:after {
     margin-left: 20px;
 }
 .facts{
-    margin-top: 150px !important;
+    margin-top: 5px !important;
 }
 /************************ */
 
@@ -465,12 +473,12 @@ input.check-toggle-round-flat:checked + label:after {
 }
 
 .service-item .btn {
-    width: 40px;
+    width: 37px;
     height: 40px;
     display: inline-flex;
     align-items: center;
     color: var(--dark);
-    background: #FFFFFF;
+    /* background: #FFFFFF; */
     white-space: nowrap;
     overflow: hidden;
     transition: .5s;

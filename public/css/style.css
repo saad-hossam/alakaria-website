@@ -5,6 +5,15 @@
     --light: #F8F8F8;
     --dark: #252525;
 }
+@media (max-width: 991.98px) {
+    .top-bar {
+        display: none !important;
+    }
+}
+
+.links{
+    text-align: right;
+}
 .carousel-inner img {
     width: 100%;
     height: auto;  /* Adjust height as needed */
@@ -33,6 +42,10 @@ h6,
     font-weight: 400 !important;
 }
 
+hr{
+    color: #252525;
+    font-size:larger;
+}
 .back-to-top {
     position: fixed;
     display: none;
@@ -365,12 +378,12 @@ h6,
 }
 
 .service-item .btn {
-    width: 40px;
+    width: 37px;
     height: 40px;
     display: inline-flex;
     align-items: center;
     color: var(--dark);
-    background: #FFFFFF;
+    /* background: #FFFFFF; */
     white-space: nowrap;
     overflow: hidden;
     transition: .5s;
@@ -584,7 +597,7 @@ h6,
     display: inline-block;
     margin: 0 5px;
   }
-  
+
   .switch > span {
     position: absolute;
     top: 14px;
@@ -597,27 +610,27 @@ h6,
     width: 50%;
     text-align: center;
   }
-  
+
   input.check-toggle-round-flat:checked ~ .off {
     color: #B78D65;
   }
-  
+
   input.check-toggle-round-flat:checked ~ .on {
     color: #fff;
   }
-  
+
   .switch > span.on {
     left: 0;
     padding-left: 2px;
     color: #B78D65;
   }
-  
+
   .switch > span.off {
     right: 0;
     padding-right: 4px;
     color: #fff;
   }
-  
+
   .check-toggle {
     position: absolute;
     margin-left: -9999px;
@@ -633,7 +646,7 @@ h6,
     -ms-user-select: none;
     user-select: none;
   }
-  
+
   input.check-toggle-round-flat + label {
     padding: 2px;
     width: 97px;
@@ -650,13 +663,13 @@ h6,
     position: absolute;
     content: "";
   }
-  
+
   input.check-toggle-round-flat + label:before {
     top: 2px;
     left: 2px;
     bottom: 2px;
     right: 2px;
-    background-color: #B78D65;    
+    background-color: #B78D65;
     -moz-border-radius: 60px;
     -ms-border-radius: 60px;
     -o-border-radius: 60px;
@@ -678,10 +691,10 @@ h6,
     -o-transition: margin 0.2s;
     transition: margin 0.2s;
   }
-  
+
   input.check-toggle-round-flat:checked + label {
   }
-  
+
   input.check-toggle-round-flat:checked + label:after {
     margin-left: 44px;
   }

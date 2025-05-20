@@ -26,7 +26,7 @@
         margin-top: 15px;
     }
     .thumbnail-container img {
-        width: 130px;
+        width: 100px;
         object-fit: cover;
         border: 2px solid transparent;
         cursor: pointer;
@@ -57,15 +57,15 @@
     <div class="container">
         <div class="row">
             <!-- Project Details -->
-            <div class="col-lg-3">
+
+            <div class="col-lg-8 mt-1 text-center">
                 <div class="text-start mb-4">
                     <h1 class="display-6">{!! $project->translate(app()->getLocale())->name !!}</h1>
                     <p class="lead">{!! $project->department->name !!}</p>
                     <p>{!! $project->translate(app()->getLocale())->description !!}</p>
                 </div>
             </div>
-
-            <div class="col-lg-9">
+            <div class="col-lg-12">
                 <div class="container-fluid mt-4">
                     <div class="row justify-content-center">
                         <!-- Large Image Preview (Click to Open Modal) -->
@@ -86,6 +86,8 @@
                     </div>
                 </div>
             </div>
+
+
         </div>
     </div>
 </div>

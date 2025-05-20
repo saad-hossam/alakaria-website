@@ -28,6 +28,10 @@ return [
     ],
     'links' => [
         'siteName' => 'اسم شركتك',
-        'designedBy' => 'تصميم بواسطة HTML Codex',
+        'designedBy' => 'تصميم بواسطة ادارة النظم الهيئة العربية للتنصنيع ',
     ],
+    'mobile'=>'67890  345 012 +  ',
+    'email_address'=>'info@example.com',
+    'address1'=>'شارع 123، نيويورك، الولايات المتحدة الأمريكية'
+
 ];

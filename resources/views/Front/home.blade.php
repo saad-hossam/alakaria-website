@@ -12,7 +12,7 @@
                     <div class="container">
                         <div class="row justify-content-center">
                             <div class="col-10 col-lg-8 text-center">
-                                <h1 class="display-1 text-white typewriter" data-text="{{$slide->translate(app()->getLocale())->title}}"></h1>
+                                <h3 class="display-1 text-white typewriter" data-text="{{$slide->translate(app()->getLocale())->title}}"></h3>
                                 <a href="" class="btn btn-primary py-3 px-5 animated slideInLeft">{{trans('about.read_more')}}</a>
                             </div>
                         </div>
@@ -58,7 +58,7 @@
 <!-- About End -->
 
 <!-- Feature Start -->
-<div class="container-xxl py-5">
+{{-- <div class="container-xxl py-5 mt-5">
     <div class="container">
         <div class="row g-3">
             <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
@@ -102,8 +102,9 @@
             </div>
         </div>
     </div>
-</div>
+</div> --}}
 <!-- Feature End -->
+<hr>
 
 <!-- Service Start -->
 <div class="container-xxl py-5">
@@ -141,7 +142,7 @@
 </div>
 <!-- Service End -->
 
-
+{{-- <hr> --}}
 <!-- Facts Start -->
 <div class="container ">
     <div class="row">
@@ -179,6 +180,7 @@
 
 
 
+{{-- <hr> --}}
 
 <!-- Project Start -->
 <div class="container-xxl project py-5">
@@ -187,7 +189,7 @@
             <h4 class="section-title">{{trans('projects.our_projects')}}</h4>
             <h3 class="display-5 mb-4">{{trans('projects.projects_body')}}</h3>
         </div>
-        <div class="row g-4 wow fadeInUp" data-wow-delay="0.3s">
+        <div class="row g-4 p-3 wow fadeInUp" style="border:1px solid rgb(229, 218, 218);border-style:dashed" data-wow-delay="0.3s">
             <div class="col-lg-4">
                 <div class="nav nav-pills d-flex justify-content-between w-100 h-100 me-4">
                     @foreach($projects as $index => $project)
@@ -203,13 +205,13 @@
                 <div class="tab-content w-100">
                     @foreach($projects as $index => $project)
                         <div class="tab-pane fade @if($index == 0) show active @endif" id="tab-pane-{{ $index + 1 }}">
-                            <div class="row g-4">
+                            <div class="row g-4 " >
                                 <div class="col-md-6" style="min-height: 400px;">
                                     <div class="position-relative h-100">
                                         <img class="position-absolute img-fluid w-100 h-100" src="{{ asset('images/projects/main/' . $project->image) }}" style="object-fit: cover;" alt="">
                                     </div>
                                 </div>
-                                <div class="col-md-6">
+                                <div class="col-md-6 text-center">
                                     <h1 class="mb-3">{!! $project->translate(app()->getLocale())->name !!}</h1>
                                     <p class="mb-4">{!! $project->translate(app()->getLocale())->description !!}</p>
                                     {{-- <p><i class="fa fa-check text-primary me-3"></i>{{ $project->design_approach }}</p> --}}
@@ -217,6 +219,7 @@
                                     {{-- <p><i class="fa fa-check text-primary me-3"></i>{{ $project->project_management }}</p> --}}
                                     <a href="{{ route('project_details', $project->id) }}" class="btn btn-primary py-3 px-5 mt-3">Read More</a>
                                 </div>
+                                {{-- <hr> --}}
                             </div>
                         </div>
                     @endforeach
