@@ -161,8 +161,8 @@
 
             @foreach ($departments as $department )
 
-            <div class="col-lg-3 col-md-6 wow fadeInUp pb-5" data-wow-delay="0.1s">
-                <div class="fact-item text-center bg-light h-100 p-5 pt-0">
+            <div class="col-lg-3 col-md-6 wow fadeInUp pb-5 mt-5" data-wow-delay="0.1s">
+                <div class="fact-item text-center bg-light h-100 p-5 pt-4">
                     <div class="fact-icon">
                         <img src="{{asset('images/departments/'.$department->image)}}" alt="Icon">
                     </div>

@@ -114,8 +114,8 @@
                     <div class="col-md-6 border-start border-top border-secondary p-4 pe-0">
                         <div class="h-100 d-flex flex-column justify-content-center bg-primary p-4">
                             <h4 class="mb-2 text-dark">{{ $story->translate(app()->getLocale())->name }}</h4>
-                            <p class="text-uppercase text-primary mb-2" style="letter-spacing: 3px;">{{ $story->year }}</p>
-                            <p class="m-0 fs-5">{{ $story->translate(app()->getLocale())->description }}</p>
+                            <p class="text-uppercase text-primary mb-2 fs-2" style="letter-spacing: 3px;">{{ $story->year }}</p>
+                            <p class="m-0 fs-2">{{ $story->translate(app()->getLocale())->description }}</p>
                         </div>
                     </div>
                 </div>
