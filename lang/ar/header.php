@@ -10,6 +10,7 @@ return[
     'our_vision'=>'رؤيتنا',
     'our_message'=>'رسالتنا',
     'our_goal'=>'هدفنا',
+    'Alakaria'=>' العقارية',
 
 
     'about_us'=>'عن الشركة',

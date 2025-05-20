@@ -5,7 +5,7 @@ return[
     'our_profile'=>'OUR PROFILE',
     'our_services'=>' SERVICES',
     'our_departments'=>' DEPARTMENTS',
-
+'Alakaria'=>'Alakaria',
     'our_vision'=>'OUR VISION',
     'our_message'=>'OUR MESSAGE',
     'our_goal'=>'OUR GOAL',

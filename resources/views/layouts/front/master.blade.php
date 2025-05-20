@@ -3,8 +3,8 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Alakaria</title>
-    <link rel="icon" href="{{ URL::asset('images/logo/274730667_341453347913506_6048684782427197231_n.jpg') }}" type="image/x-icon" />
+    <title>{{ trans('header.Alakaria') }}</title>
+    <link rel="icon" href="{{ URL::asset('images/logo/b8c72a254b2d423f8e19c1b9f9d387fc (1).png') }}" type="image/x-icon" />
 
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
