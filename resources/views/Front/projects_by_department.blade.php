@@ -44,7 +44,7 @@
 
 <div class="container-xxl py-5">
     <div class="container">
-        <h1 class="display-6 text-center">{{ $department->translate(app()->getLocale())->name }}</h1>
+        <h1 class="display-6 text-center">{!! $department->translate(app()->getLocale())->name !!}</h1>
 
         <div class="row mt-3">
             @foreach ($projects as $project)
@@ -52,7 +52,7 @@
                     <div class="project-item text-center shadow-m">
                         <img src="{{ asset('images/projects/main/' . $project->image) }}" class="img-fluid" height="300px" alt="{{ $project->name }}">
                         <h5 class="pt-3">{!! $project->translate(app()->getLocale())->name !!}</h5>
-                        <p>{!! $project->translate(app()->getLocale())->description !!}</p>
+                        <!-- <p>{!! $project->translate(app()->getLocale())->description !!}</p> -->
                         <a href="{{ route('project_details', $project->id) }}" class="btn btn-primary py-3 px-5 mt-3 mb-3">{{trans('about.read_more')}}</a>
                     </div>
                 </div>

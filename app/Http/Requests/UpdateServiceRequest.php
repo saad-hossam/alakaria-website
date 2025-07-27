@@ -21,39 +21,35 @@ class UpdateServiceRequest extends FormRequest
      *
      * @return array<string, mixed>
      */
-    public function rules()
+  public function rules()
     {
         return [
             'en.name' => 'required|max:256',
             'ar.name' => 'required|max:256',
-            'en.description' => 'required|max:256',
-            'ar.description' => 'required|max:256',
-            'en.body' => 'required|max:256',
-            'ar.body' => 'required|max:256',
+            'en.description' => 'required',
+            'ar.description' => 'required',
+            'en.body' => 'required',
+            'ar.body' => 'required',
             'status' => 'required',
-            'image' =>'image|mimes:jpeg,png,jpg,gif|max:2048',
+            'image' =>'nullable|image|mimes:jpeg,png,jpg,gif|max:2048', // هنا الفرق: nullable بدلاً من required
         ];
     }
-    public function messages(){
-        return[
+
+    public function messages()
+    {
+        return [
             'en.name.required' => 'الاسم باللغة الانجليزية مطلوب.',
-            'en.name.max:256' => 'يجب الا يتخطي عدد حروف الاسم اكثر من 256 حرف.',
+            'en.name.max' => 'يجب ألا يتجاوز عدد حروف الاسم 256 حرف.',
             'ar.name.required' => 'الاسم باللغة العربية مطلوب.',
-            'ar.name.max:256' => 'يجب الا يتخطي عدد حروف الاسم اكثر من 256 حرف.',
+            'ar.name.max' => 'يجب ألا يتجاوز عدد حروف الاسم 256 حرف.',
             'en.description.required' => 'الوصف باللغة الانجليزية مطلوب.',
-            'en.description.max:256' => 'يجب الا يتخطي عدد حروف الوصف اكثر من 256 حرف.',
             'ar.description.required' => 'الوصف باللغة العربية مطلوب.',
-            'ar.description.max:256' => 'يجب الا يتخطي عدد حروف الوصف اكثر من 256 حرف.',
             'en.body.required' => 'المحتوى باللغة الانجليزية مطلوب.',
-            'en.body.max:256' => 'يجب الا يتخطي عدد حروف المحتوى اكثر من 256 حرف.',
             'ar.body.required' => 'المحتوى باللغة العربية مطلوب.',
-            'ar.body.max:256' => 'يجب الا يتخطي عدد حروف المحتوى اكثر من 256 حرف.',
-           'status.required' => 'حالة الخدمة مطلوبة.',
-            // 'image.required' => 'الصورة مطلوبة.',
+            'status.required' => 'حالة الخدمة مطلوبة.',
             'image.image' => 'يجب أن تكون الصورة بصيغة صحيحة.',
             'image.mimes' => 'يجب أن تكون الصورة من نوع jpeg, png, jpg, gif.',
-
+            'image.max' => 'يجب ألا يتجاوز حجم الصورة 2 ميغابايت.',
         ];
-
-}
+    }
 }

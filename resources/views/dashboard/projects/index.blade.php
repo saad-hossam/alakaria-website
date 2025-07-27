@@ -148,12 +148,18 @@
                                         <a href="{{ route('projects.edit', $project->id) }}" class="btn btn-sm btn-info"
                                             title="تعديل"><i class="las la-pen"></i></a>
                                         @endcan
-                                        @can('project-delete')
-                                        <a class="modal-effect btn btn-sm btn-danger" data-effect="effect-scale"
-                                            data-user_id="{{ $project->id }}" data-username="{!! $project->name !!}"
-                                            data-toggle="modal" href="#modaldemo8" title="حذف"><i class="las la-trash"></i></a>
+                                       @can('project-delete') <!-- يتحقق مما إذا كان المستخدم لديه صلاحية الحذف -->
+    <a class="modal-effect btn btn-sm btn-danger"
+       data-effect="effect-scale"
+       data-user_id="{{ $project->id }}"
+       data-username="{!! $project->name !! }}"
+       data-toggle="modal"
+       href="#modaldemo8"
+       title="حذف">
+       <i class="las la-trash"></i>
+    </a>
+@endcan
 
-                                        @endcan
 
                                     </td>
                                 </tr>

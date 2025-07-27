@@ -41,7 +41,7 @@
                 @foreach ($projects as $project)
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="project-item text-center">
-                        <img src="{{ asset('images/projects/main/' . $project->image) }}" class="img-fluid" alt="{{ $project->name }}">
+                        <img src="{{ asset('images/projects/main/' . $project->image) }}" class="img-fluid w-100" alt="{{ $project->name }}">
                         <h5 class="mt-3">{!! $project->translate(app()->getLocale())->name !!}</h5>
                         <a href="{{ route('project_details', $project->id) }}" class="btn btn-primary py-3 px-5 mt-3 mb-3">{{trans('about.read_more')}}</a>
                     </div>

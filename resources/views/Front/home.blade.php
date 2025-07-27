@@ -12,8 +12,8 @@
                     <div class="container">
                         <div class="row justify-content-center">
                             <div class="col-10 col-lg-8 text-center">
-                                <h3 class="display-1 text-white typewriter" data-text="{{$slide->translate(app()->getLocale())->title}}"></h3>
-                                <a href="" class="btn btn-primary py-3 px-5 animated slideInLeft">{{trans('about.read_more')}}</a>
+                                <h3 class="display-6 text-white typewriter" data-text="{{$slide->translate(app()->getLocale())->title}}"></h3>
+                                <a href="" class="btn btn-primary py-3 mt-5 px-5 animated slideInLeft">{{trans('about.read_more')}}</a>
                             </div>
                         </div>
                     </div>
@@ -117,13 +117,13 @@
             <!-- Always Visible Services -->
             @foreach ($services as $service )
 
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                <div class="service-item d-flex position-relative text-center h-100">
-                    <img class="bg-img  " src="{{ asset('img/service-2.jpg') }}" alt="">
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s" >
+                <div class="service-item d-flex position-relative text-center ">
+                    <!-- <img class="bg-img  " src="{{ asset('img/service-2.jpg') }}" alt=""> -->
                     <div class="service-text  w-100">
-                    <img class="mb-4 pt-3" src="{{ asset('images/services/'. $service->image) }}" alt="Icon">
+                    <img class="mb-4 pb-3 w-100" style="height:300px" src="{{ asset('images/services/'. $service->image) }}" alt="Icon">
                     <h3 class="mb-3">{!! $service->translate(app()->getLocale())->name !!}</h3>
-                    <p class="mb-4">{!! Str::words($service->translate(app()->getLocale())->description, 15, '...') !!}</p>
+                    <!-- <p class="mb-4">{!! Str::words($service->translate(app()->getLocale())->description, 15, '...') !!}</p> -->
                                        <a class="btn mb-4" href="{{route('service_details',$service->id)}}"><i class="fa fa-plus text-primary  fs-2"></i>{{trans('about.read_more')}}</a>
                     </div>
                     <div>
@@ -164,7 +164,7 @@
             <div class="col-lg-3 col-md-6 wow fadeInUp pb-5 mt-5" data-wow-delay="0.1s">
                 <div class="fact-item text-center bg-light h-100 p-5 pt-4">
                     <div class="fact-icon">
-                        <img src="{{asset('images/departments/'.$department->image)}}" alt="Icon">
+                        <img class="fact-icon m-0" src="{{asset('images/departments/'.$department->image)}}" alt="Icon">
                     </div>
                     <h3 class="mb-2">{!! $department->translate(app()->getLocale())->name !!}</h3>
                     <a href="{{route('projects.by_department',$department->id)}}">
@@ -209,12 +209,12 @@
                             <div class="row g-4 " >
                                 <div class="col-md-6" style="min-height: 400px;">
                                     <div class="position-relative h-100">
-                                        <img class="position-absolute img-fluid w-100 h-100" src="{{ asset('images/projects/main/' . $project->image) }}" style="object-fit: cover;" alt="">
+                                        <img class="position-absolute img-fluid w-100 " style=" height:100%" src="{{ asset('images/projects/main/' . $project->image) }}" style="object-fit: cover;" alt="">
                                     </div>
                                 </div>
-                                <div class="col-md-6 text-center">
+                                <div class="col-md-6 text-center h-100">
                                     <h1 class="mb-3">{!! $project->translate(app()->getLocale())->name !!}</h1>
-                                    <p class="mb-4">{!! $project->translate(app()->getLocale())->description !!}</p>
+                                    <!-- <p class="mb-4">{!! $project->translate(app()->getLocale())->description !!}</p> -->
                                     {{-- <p><i class="fa fa-check text-primary me-3"></i>{{ $project->design_approach }}</p> --}}
                                     {{-- <p><i class="fa fa-check text-primary me-3"></i>{{ $project->innovative_solutions }}</p> --}}
                                     {{-- <p><i class="fa fa-check text-primary me-3"></i>{{ $project->project_management }}</p> --}}

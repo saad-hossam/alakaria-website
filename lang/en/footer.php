@@ -30,7 +30,8 @@ return [
         'siteName' => 'Your Company Name',
         'designedBy' => 'Designed by AOI IT DEPARTMENT',
     ],
-    'mobile'=>'+ 012 345 67890',
-    'email_address'=>'info@example.com',
-    'address1'=>'123 Street, New York, USA'
+    'mobile'=>'+ 22672297 / + 22673635',
+    'fax'=>'+ 22660797',
+    'email_address'=>'chairman.aretpc@AOI.ORG.EG',
+    'address1'=>'Kilometer 17 - Suez Road'
 ];

@@ -16,8 +16,8 @@ return new class extends Migration
         Schema::create('project_translations', function (Blueprint $table) {
             $table->id();
             $table->string('locale');
-            $table->string('name');
-            $table->text('description');
+            $table->text('name');
+            $table->longText('description');
             $table->unique(['project_id', 'locale']);
             $table->foreignId('project_id')->constrained()->onDelete('cascade'); // Fix here
             $table->timestamps();

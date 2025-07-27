@@ -81,6 +81,7 @@ class SliderController extends Controller
             $finalImagePathName = $this->SaveImage('images/sliders', $request->file('image'));
             $data['image'] = $finalImagePathName; // Save the image path
         }
+    $slider->status = $request->input('status');
 
         // Update the slider entry
         $slider->update($data);
@@ -91,6 +92,7 @@ class SliderController extends Controller
             if ($request->has($locale)) {
                 // Update translations for each locale
                 $slider->translateOrNew($locale)->title = $request->input("$locale.title");
+           
             }
         }
 

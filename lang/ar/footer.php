@@ -30,8 +30,9 @@ return [
         'siteName' => 'اسم شركتك',
         'designedBy' => 'تصميم بواسطة ادارة النظم الهيئة العربية للتنصنيع ',
     ],
-    'mobile'=>'67890  345 012 +  ',
-    'email_address'=>'info@example.com',
-    'address1'=>'شارع 123، نيويورك، الولايات المتحدة الأمريكية'
+   'mobile'=>'+ 22672297 / + 22673635',
+    'fax'=>'+ 22660797',
+    'email_address'=>'chairman.aretpc@AOI.ORG.EG',
+    'address1'=>'الكيلو 17 - طريق السويس'
 
 ];

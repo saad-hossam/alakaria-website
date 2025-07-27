@@ -14,6 +14,10 @@
                     <i class="fa fa-phone-alt  me-3 ps-2"></i>
                     {{ trans('footer.mobile') }}
                 </p>
+                 <p class="mb-2" style="font-size:larger">
+                    <i class="fa fa-fax  me-3 ps-2"></i>
+                    {{ trans('footer.fax') }}
+                </p>
                 <p class="mb-2" style="font-size:larger">
                     <i class="fa fa-envelope  me-3 ps-2"></i>
 {{ trans('footer.email_address') }}
@@ -58,7 +62,7 @@
                     {{ __('footer.newsletter.title') }}
                 </h3>
                 <iframe class="w-100 mb-n2 pb-5" style="height:300px"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3001156.4288297426!2d-78.01371936852176!3d42.72876761954724!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4ccc4bf0f123a5a9%3A0xddcfc6c1de189567!2sNew%20York%2C%20USA!5e0!3m2!1sen!2sbd!4v1603794290143!5m2!1sen!2sbd"
+                src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d55238.93196350343!2d31.442309149602174!3d30.0817760250493!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x1458178d9fbacd13%3A0x1151dbf2a01c10fb!2z2LHYptin2LPYqSDYp9mE2YfZitim2Kkg2KfZhNi52LHYqNmK2Kkg2YTZhNiq2LXZhtmK2LksINi32LHZitmCINmF2LXYsSwg2LTZitix2KfYqtmI2YYg2KfZhNmF2LfYp9ix2Iwg2YLYs9mFINin2YTZhtiy2YfYqdiMINmF2K3Yp9mB2LjYqSDYp9mE2YLYp9mH2LHYqeKArCA0NDcyMTIw!3m2!1d30.0822455!2d31.4066826!5e0!3m2!1sar!2seg!4v1753432839143!5m2!1sar!2seg"
                 frameborder="0" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
             </div>
         </div>
@@ -73,7 +77,7 @@
                     </a>, {{ __('footer.copyright.title') }}.
                 </div>
                 <div class="col-md-6 text-center text-md-end" data-translate="footer.copyright.designedBy">
-                    <a href="https://htmlcodex.com" data-translate="footer.links.designedBy">
+                    <a href="#" data-translate="footer.links.designedBy">
                         {{ __('footer.links.designedBy') }}
                     </a>
                 </div>

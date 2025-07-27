@@ -81,26 +81,27 @@ class ServiceController extends Controller
 
     }
 
-    public function update(UpdateServiceRequest $request,  $id)
-    {
-        // Find the record and check for existence
-    $service = service::find($id);
+    public function update(UpdateServiceRequest $request, $id)
+{
+    $service = Service::find($id);
     if (!$service) {
-        return redirect()->route('histories.index')->withErrors(['error' => 'service record not found.']);
+        return redirect()->route('services.index')->withErrors(['error' => 'service record not found.']);
     }
-    // Unlink the old image if a new image is being uploaded and the old image exists
+
     if ($request->hasFile('image') && $service->image && file_exists(public_path('images/services/'.$service->image))) {
-        unlink(public_path('images/services/'.$service->image)); // Delete the old image
+        unlink(public_path('images/services/'.$service->image));
     }
-    // Update image if provided
+
     if ($request->hasFile('image')) {
         $finalImagePathName = $this->SaveImage('images/services', $request->file('image'));
-        $service->image = $finalImagePathName; // Save the new image path
+        $service->image = $finalImagePathName;
     }
-    // Save the base model
-    $service->save();
-    // Update translations dynamically for all locales
-    $locales = array_keys(config('app.languages')); // Get defined locales
+
+    // ✅ تحديث الحالة هنا
+    $service->status = $request->input('status');
+
+    // تحديث الترجمة
+    $locales = array_keys(config('app.languages'));
     foreach ($locales as $locale) {
         if ($request->has($locale)) {
             $service->translateOrNew($locale)->name = $request->input("$locale.name");
@@ -108,10 +109,13 @@ class ServiceController extends Controller
             $service->translateOrNew($locale)->body = $request->input("$locale.body");
         }
     }
-    // Save translations
+
+    // حفظ النموذج
     $service->save();
-    return redirect()->route('services.index')->with('success', 'service updated successfully.');
+
+    return redirect()->route('services.index')->with('success', 'تم تحديث الخدمة بنجاح.');
 }
+
 
 
     public function destroy(Request $request)

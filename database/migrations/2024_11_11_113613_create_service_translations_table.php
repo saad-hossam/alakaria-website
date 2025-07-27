@@ -16,9 +16,9 @@ return new class extends Migration
         Schema::create('service_translations', function (Blueprint $table) {
             $table->id();
             $table->string('locale');
-            $table->string('name');
-            $table->text('description');
-            $table->text('body');
+            $table->text('name');
+            $table->longText('description');
+            $table->longText('body');
             $table->unique(['service_id','locale']);
             $table->foreignId('service_id')->onDelete('cascade');
             $table->timestamps();
