@@ -13,11 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('departments', function (Blueprint $table) {
+        Schema::create('news', function (Blueprint $table) {
             $table->id();
                 $table->string('image')->nullable();
-                $table->foreignId('parent_id')->nullable()->constrained('departments')->onDelete('cascade');
-            $table->enum('status', [ 'active', 'disabled']);
+                            $table->enum('status', [ 'active', 'disabled']);
+
             $table->timestamps();
         });
     }
@@ -29,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('departments');
+        Schema::dropIfExists('news');
     }
 };

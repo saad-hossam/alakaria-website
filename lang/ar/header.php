@@ -11,6 +11,7 @@ return[
     'our_message'=>'رسالتنا',
     'our_goal'=>'هدفنا',
     'Alakaria'=>' العقارية',
+    'news'=>'اﻷخبار',
 
 
     'about_us'=>'عن الشركة',

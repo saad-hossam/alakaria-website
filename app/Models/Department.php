@@ -29,10 +29,12 @@ class Department extends Model
     //         $department->translations()->delete();
     //     });
     // }
-    public function translations()
-    {
-        return $this->hasMany(DepartmentTranslation::class);
-    }
+  public function translations()
+{
+    return $this->hasMany(DepartmentTranslation::class);
+}
+
+
 
     // Department.php
 

@@ -67,12 +67,12 @@
                                 <div class="tab-pane mt-3 fade @if ($loop->first) show active @endif" id="{{ $key }}"
                                     role="tabpanel">
                                     <div class="form-group">
-                                        <label>{{ __('words.project_name') }} ({{ $lang }})</label>
+                                        <label>الاسم -- {{ $lang }}</label>
                                         <textarea name="{{ $key }}[name]" class="form-control plain-text"
                                             id="name-{{ $key }}" rows="2">{{ old("$key.name") }}</textarea>
                                     </div>
                                     <div class="form-group">
-                                        <label>{{ __('words.project_description') }} ({{ $lang }})</label>
+                                        <label>الوصف -- {{ $lang }}</label>
                                         <textarea name="{{ $key }}[description]" class="form-control plain-text"
                                             id="description-{{ $key }}"
                                             rows="5">{{ old("$key.description") }}</textarea>

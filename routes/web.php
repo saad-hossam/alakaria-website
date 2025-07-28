@@ -9,15 +9,16 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\NewsController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\SliderController;
 use App\Http\Controllers\ContactController;
+
+
 use App\Http\Controllers\GallaryController;
-
-
 use App\Http\Controllers\HistoryController;
 use App\Http\Controllers\MessageController;
 use App\Http\Controllers\PartnerController;
@@ -26,6 +27,7 @@ use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DepartmentController;
+use App\Http\Controllers\SubDepartmentController;
 
 // use App\Http\Middleware\TrackVisitor;
 
@@ -69,7 +71,7 @@ Route::group(['prefix'=>'/admin/','middleware' => ['auth','admin']], function ()
     Route::resource('services', ServiceController::class);
     Route::resource('projects', ProjectController::class);
     Route::get('projects/{project}/images', [ProjectController::class, 'showImages'])->name('projects.showImages');
-
+    Route::resource('news', NewsController::class);
 
 
 
@@ -103,7 +105,8 @@ Route::group(
         Route::get('/service/{id}', [HomeController::class,'service_details'])->name('service_details');
         Route::get('/project/{id}', [HomeController::class,'project_details'])->name('project_details');
         Route::get('/projects/department/{department_id}', [HomeController::class, 'projects_by_department'])->name('projects.by_department');
-
+Route::get('/news', [HomeController::class, 'news'])->name('front.news');
+Route::get('/news/{slug}', [HomeController::class, 'showNews'])->name('front.news.show');
 
 
     }

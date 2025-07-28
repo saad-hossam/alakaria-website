@@ -2,6 +2,8 @@
 // resources/lang/en/footer.php
 
 return [
+        'company'=>'Alakaria',
+
     'address' => [
         'title' => 'Address',
     ],
@@ -28,7 +30,7 @@ return [
     ],
     'links' => [
         'siteName' => 'Your Company Name',
-        'designedBy' => 'Designed by AOI IT DEPARTMENT',
+        'designedBy' => 'Designed by AOI IT DEPARTMENT 2025',
     ],
     'mobile'=>'+ 22672297 / + 22673635',
     'fax'=>'+ 22660797',

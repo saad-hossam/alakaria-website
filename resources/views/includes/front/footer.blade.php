@@ -73,7 +73,7 @@
             <div class="row">
                 <div class="col-md-6 text-center text-md-start mb-3 mb-md-0" data-translate="footer.copyright.title">
                     &copy; <a href="#" data-translate="footer.links.siteName">
-                        {{ __('footer.links.siteName') }}
+                        {{ __('footer.company') }}
                     </a>, {{ __('footer.copyright.title') }}.
                 </div>
                 <div class="col-md-6 text-center text-md-end" data-translate="footer.copyright.designedBy">

@@ -60,6 +60,7 @@
 
                 <a href="{{route('services_all')}}" class="nav-item nav-link" data-translate="header.nav.services">{{trans('header.our_services')}}</a>
                 <a href="{{route('projects_all')}}" class="nav-item nav-link" data-translate="header.nav.projects">{{trans('header.projects')}}</a>
+                <a href="{{route('front.news')}}" class="nav-item nav-link" data-translate="header.nav.contact">{{trans('header.news')}}</a>
 
                 {{-- <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" data-translate="header.nav.pages">{{trans('header.projects')}}</a>

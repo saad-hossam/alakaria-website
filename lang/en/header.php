@@ -12,7 +12,7 @@ return[
     'about_us'=>'ABOUT US',
     'contact_us'=>'CONTACT US',
     'projects'=>'PROJECTS',
-    // 'cataloges'=>'CATALOGES',
+    'news'=>'News',
     'message'=>'message',
     'sales'=>'Offers',
     'instock'=>'In Stock',

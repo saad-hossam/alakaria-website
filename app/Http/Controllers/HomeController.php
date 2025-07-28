@@ -1,6 +1,7 @@
 <?php
 namespace App\Http\Controllers;
 
+use App\Models\News;
 use App\Models\Slider;
 use App\Models\Gallary;
 use App\Models\History;
@@ -21,7 +22,7 @@ class HomeController extends Controller
     {
         $partners = Partner::active()->get();
         $sliders = Slider::active()->with('translations')->get();
-        $departments = Department::active()->with('translations')->get(); // Departments with translations
+        $departments = Department::active()->with('translations','subDepartments')->get(); // Departments with translations
         $projects = Project::active()->with('translations')->paginate(4); // Paginate projects
         $services = Service::active()->paginate(3); // Paginate services
 
@@ -99,6 +100,18 @@ class HomeController extends Controller
     ]);
 }
 
+
+public function News()
+    {
+        $news = News::where('status', 'active')->latest()->paginate(6);
+        return view('Front.news', compact('news'));
+    }
+
+    public function showNews($slug)
+    {
+        $news = News::whereTranslation('slug', $slug)->firstOrFail();
+        return view('front.news.show', compact('news'));
+    }
 
 
 }
