@@ -22,7 +22,7 @@ class HomeController extends Controller
     {
         $partners = Partner::active()->get();
         $sliders = Slider::active()->with('translations')->get();
-        $departments = Department::active()->with('translations','subDepartments')->get(); // Departments with translations
+        $departments = Department::active()->with('translations')->get(); // Departments with translations
         $projects = Project::active()->with('translations')->paginate(4); // Paginate projects
         $services = Service::active()->paginate(3); // Paginate services
 
