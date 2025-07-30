@@ -57,54 +57,7 @@
 </div>
 <!-- About End -->
 
-<!-- Feature Start -->
-{{-- <div class="container-xxl py-5 mt-5">
-    <div class="container">
-        <div class="row g-3">
-            <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                <h2 class="section-title">{{ trans('features.title') }}</h2>
-                <h6 class="display-6 mb-4">{{ trans('features.headline') }}</h6>
-                <div class="row g-4">
-                    <div class="col-12">
-                        <div class="d-flex align-items-start" style="font-size: 17px">
-                            <img class="flex-shrink-0" src="img/icons/icon-2.png" alt="Icon">
-                            <div class="ms-4">
-                                <h3>{{ trans('features.mission.title') }}</h3>
-                                <p class="mb-0">{{ trans('features.mission.description') }}</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12">
-                        <div class="d-flex align-items-start">
-                            <img class="flex-shrink-0" src="img/icons/icon-3.png" alt="Icon">
-                            <div class="ms-4">
-                                <h3>{{ trans('features.vision.title') }}</h3>
-                                <p class="mb-0">{{ trans('features.vision.description') }}</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12">
-                        <div class="d-flex align-items-start">
-                            <img class="flex-shrink-0" src="img/icons/icon-4.png" alt="Icon">
-                            <div class="ms-4">
-                                <h3>{{ trans('features.goal.title') }}</h3>
-                                <p class="mb-0">{{ trans('features.goal.description') }}</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
-                <div class="feature-img">
-                    <img class="img-fluid" src="img/about-2.jpg" alt="">
-                    <img class="img-fluid" src="img/about-1.jpg" alt="">
-                </div>
-            </div>
-        </div>
-    </div>
-</div> --}}
-<!-- Feature End -->
-{{-- <hr> --}}
+
 
 <!-- Service Start -->
 <div class="container-xxl py-5 mt-5">
@@ -121,7 +74,7 @@
                 <div class="service-item d-flex position-relative text-center ">
                     <!-- <img class="bg-img  " src="{{ asset('img/service-2.jpg') }}" alt=""> -->
                     <div class="service-text  w-100">
-                    <img class="mb-4 pb-3 w-100" style="height:300px" src="{{ asset('images/services/'. $service->image) }}" alt="Icon">
+                    <img class="mb-4 pb-3 pt-3" style="height:120px;width:120px" src="{{ asset('images/services/'. $service->image) }}" alt="Icon">
                     <h3 class="mb-3">{!! $service->translate(app()->getLocale())->name !!}</h3>
                     <!-- <p class="mb-4">{!! Str::words($service->translate(app()->getLocale())->description, 15, '...') !!}</p> -->
                                        <a class="btn mb-4" href="{{route('service_details',$service->id)}}"><i class="fa fa-plus text-primary  fs-2"></i>{{trans('about.read_more')}}</a>

@@ -33,8 +33,8 @@
                 <div class="service-item d-flex position-relative text-center h-100">
                     <!-- <img class="bg-img  " src="{{ asset('img/service-2.jpg') }}" alt=""> -->
                     <div class="service-text  w-100">
-                    <img class="mb-4 pb-3 w-100" style="height:300px" src="{{ asset('images/services/'. $service->image) }}" alt="Icon">
-                    <h3 class="mb-3">{!! $service->translate(app()->getLocale())->name !!}</h3>
+                        <img class="mb-4 pb-3 pt-3" style="height:120px;width:120px" src="{{ asset('images/services/'. $service->image) }}" alt="Icon">
+                        <h3 class="mb-3">{!! $service->translate(app()->getLocale())->name !!}</h3>
                     <!-- <p class="mb-4">{!! Str::words($service->translate(app()->getLocale())->description, 20, '...') !!}</p>  -->
                                        <a class="btn mb-4" href="{{route('service_details',$service->id)}}"><i class="fa fa-plus text-primary  fs-2"></i>{{trans('about.read_more')}}</a>
                     </div>

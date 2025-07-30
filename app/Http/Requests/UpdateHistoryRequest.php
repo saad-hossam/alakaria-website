@@ -29,7 +29,9 @@ class UpdateHistoryRequest extends FormRequest
             'en.name' =>'required|string|max:255',
             'ar.description' => 'required|string',
             'en.description' => 'required|string',
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'status' => 'required',
+
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ];
     }
     public function messages(){

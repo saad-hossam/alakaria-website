@@ -36,7 +36,7 @@ class AppServiceProvider extends ServiceProvider
     // });
     view()->share('departments', Department::all());
     view()->share('services', Service::all());
-
+//
 
         // view()->composer('*',function($view) {
         //     $view->with('departments', Department::all());

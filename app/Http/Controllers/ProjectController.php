@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Log;
 use App\Models\Project;
 use App\Traits\SaveFile;
 use App\Models\Department;
@@ -100,23 +99,27 @@ class ProjectController extends Controller
     $data = $request->validate([
         'name' => 'nullable|string|max:255',
         'description' => 'nullable|string',
-        'main_image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         'images.*' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        'status' => 'required',
+
     ]);
 
 
 
     // 1. تحديث الصورة الرئيسية إن تم رفع واحدة جديدة
-    if ($request->hasFile('main_image')) {
-        $oldMainPath = public_path('images/projects/' . $project->main_image);
-        if (file_exists($oldMainPath)) {
+    if ($request->hasFile('image')) {
+        $oldMainPath = public_path('images/projects/main' . $project->image);
+
+        if (is_file($oldMainPath)) {
             unlink($oldMainPath);
         }
 
-        $data['main_image'] = $this->saveImage('images/projects', $request->file('main_image'));
+
+        $data['image'] = $this->saveImage('images/projects/main', $request->file('image'));
     } else {
         // الاحتفاظ بالصورة الرئيسية القديمة
-        $data['main_image'] = $project->main_image;
+        $data['image'] = $project->image;
     }
 
     // 2. التعامل مع الصور الإضافية (images[])
@@ -140,6 +143,7 @@ class ProjectController extends Controller
         // الاحتفاظ بالصور القديمة
         $data['images'] = $project->images;
     }
+    $project->status = $request->input('status');
 
     // 3. تحديث المشروع
     $project->update($data);

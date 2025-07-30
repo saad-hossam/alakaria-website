@@ -85,6 +85,8 @@ class historyController extends Controller
         $finalImagePathName = $this->SaveImage('images/histories', $request->file('image'));
         $history->image = $finalImagePathName; // Save the new image path
     }
+    $history->status = $request->input('status');
+
     // Save the base model
     $history->save();
     // Update translations dynamically for all locales
