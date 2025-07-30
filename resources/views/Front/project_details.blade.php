@@ -105,7 +105,7 @@
         <div class="col-lg-6">
             <div class="project-details">
                 <h1>{!! $project->translate(app()->getLocale())->name !!}</h1>
-                <p class="lead">{{ $project->department->translate(app()->getLocale())->name }}</p>
+                <p class="lead">{!! $project->department->translate(app()->getLocale())->name !!}</p>
                 <p class="description">{!! $project->translate(app()->getLocale())->description !!}</p>
             </div>
         </div>
