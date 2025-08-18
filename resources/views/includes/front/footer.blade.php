@@ -2,13 +2,13 @@
 <div class="container-fluid bg-dark text-body footer  mt-5 pt-5 px-3 wow fadeIn" data-wow-delay="0.1s">
     <div class="container">
         <div class="row g-4">
-            <div class="col-lg-4 col-md-6">
+            <div class="col-lg-5 col-md-6">
                 <h3 class="text-light mb-4" data-translate="footer.address.title">
                     {{ __('footer.address.title') }}
                 </h3>
                 <p class="mb-2" style="font-size:larger">
                     <i class="fa fa-map-marker-alt  me-3 ps-2"></i>
-{{ trans('footer.address1') }}
+                    {{ trans('footer.address1') }}
                 </p>
                 <p class="mb-2" style="font-size:larger">
                     <i class="fa fa-phone-alt  me-3 ps-2"></i>
@@ -20,7 +20,7 @@
                 </p>
                 <p class="mb-2" style="font-size:larger">
                     <i class="fa fa-envelope  me-3 ps-2"></i>
-{{ trans('footer.email_address') }}
+                {{ trans('footer.email_address') }}
                 </p>
                 <div class="d-flex pt-2">
                     <a class="btn btn-square btn-outline-body me-3" href="#"><i class="fab fa-twitter"></i></a>
@@ -30,16 +30,16 @@
                 </div>
             </div>
 
-            <div class="col-lg-2 col-md-6">
+            {{-- <div class="col-lg-4 col-md-6">
                 <h3 class="text-light mb-4" data-translate="footer.services.title">
                     {{ __('footer.services.title') }}
                 </h3>
                 @foreach ($services as $service)
                     <a class="btn btn-link" href="#">{!! $service->translate(app()->getLocale())->name !!}</a>
                 @endforeach
-            </div>
+            </div> --}}
 
-            <div class="col-lg-2 col-md-6">
+            <div class="col-lg-3 col-md-6">
                 <h3 class="text-light mb-4" data-translate="footer.quickLinks.title">
                     {{ __('footer.quickLinks.title') }}
                 </h3>

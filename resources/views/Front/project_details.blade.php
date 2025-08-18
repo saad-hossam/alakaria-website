@@ -73,7 +73,7 @@
         <h1 class="display-3 text-white mb-4">{{ trans('header.projects') }}</h1>
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb justify-content-center mb-0">
-                <li class="breadcrumb-item"><a href="/">{{ trans('home.house') }}</a></li>
+                    <li class="breadcrumb-item"><a href="{{ route('home') }}">{{trans('home.house')}}</a></li>
                 <li class="breadcrumb-item active">{{ trans('header.projects') }}</li>
             </ol>
         </nav>

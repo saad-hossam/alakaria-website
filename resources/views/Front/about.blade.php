@@ -1,4 +1,19 @@
 @extends("layouts.front.master")
+
+<style>
+    .about p i {
+    font-size: 18px;   /* adjust icon size */
+    margin: 10px; /* space between icon and text */
+    color: #0d6efd;     /* Bootstrap primary color */
+}
+.about p {
+    display: flex;
+    align-items: flex-center;
+    font-size: 17px; /* match your text style */
+    margin-bottom: 8px;
+}
+
+</style>
 @section('content')
 
  <!-- Page Header Start -->
@@ -7,9 +22,9 @@
         <h1 class="display-3 text-white mb-4 animated slideInDown">{{trans('header.about_us')}}</h1>
         <nav aria-label="breadcrumb animated slideInDown">
             <ol class="breadcrumb justify-content-center mb-0">
-                <li class="breadcrumb-item"><a href="#">{{trans('home.house')}}</a></li>
+                    <li class="breadcrumb-item"><a href="{{ route('home') }}">{{trans('home.house')}}</a></li>
                 <li class="breadcrumb-item"><a href="#"></a></li>
-                <li class="breadcrumb-item active" aria-current="page">{{trans('header.about_us')}}</li>
+                <li class="breadcrumb-item " aria-current="page">{{trans('header.about_us')}}</li>
             </ol>
         </nav>
     </div>
@@ -20,18 +35,46 @@
 <div class="container-xxl py-5 about">
     <div class="container">
         <div class="row g-5">
-            <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
+            <div class="col-lg-7 wow fadeIn" data-wow-delay="0.1s">
                 <div class="about-img">
                     <img class="img-fluid" src="{{asset('img/about-1.jpg')}}" alt="">
                     <img class="img-fluid" src="{{asset('img/about-2.jpg')}}" alt="">
                 </div>
             </div>
-            <div class="col-lg-6 wow fadeIn" style="font-size: 17px" data-wow-delay="0.5s">
+            <div class="col-lg-5 wow fadeIn" style="font-size: 17px" data-wow-delay="0.5s">
                 <h2 class="section-title">{{ trans('about.title') }}</h2>
-                <h6 class="display-5 mb-4">{{ trans('about.headline') }}</h6>
-                <p>{{ trans('about.description.part1') }}</p>
+                <h6 class="display-6 mb-4">{{ trans('about.headline') }}</h6>
+                <p class="d-flex align-items-start">
+                    <i class="fa fa-check text-primary me-2 mt-1"></i>
+                    {{ trans('about.description.part1') }}
+                </p>
+
+
+                <p class="d-flex align-items-start">
+                    <i class="fa fa-check text-primary me-2 mt-1"></i>
+                    {{ trans('about.description.part2') }}
+                </p>
+                <p class="d-flex align-items-start">
+                    <i class="fa fa-check text-primary me-2 mt-1"></i>
+                    {{ trans('about.description.part3') }}
+                </p>
+                <p class="d-flex align-items-start">
+                    <i class="fa fa-check text-primary me-2 mt-1"></i>
+                    {{ trans('about.description.part4') }}
+                </p>
+                <p class="d-flex align-items-start">
+                    <i class="fa fa-check text-primary me-2 mt-1"></i>
+                    {{ trans('about.description.part5') }}
+                </p>
+                <p class="d-flex align-items-start">
+                    <i class="fa fa-check text-primary me-2 mt-1"></i>
+                    {{ trans('about.description.part6') }}
+                </p>
+
+
+                {{-- <p>{{ trans('about.description.part1') }}</p>
                 <p>{{ trans('about.description.part2') }}</p>
-                <p>{{ trans('about.description.part3') }}</p>
+                <p>{{ trans('about.description.part3') }}</p> --}}
                 <div class="d-flex align-items-center mb-5">
                     <div class="d-flex flex-shrink-0 align-items-center justify-content-center border border-5 border-primary" style="width: 120px; height: 120px;">
                         <h1 class="display-1 mb-n2" >25</h1>
@@ -40,7 +83,7 @@
                         <h3>{{ trans('about.years_working_experience') }}</h3>
                     </div>
                 </div>
-                <a class="btn btn-primary py-3 px-5" href="">{{ trans('about.read_more') }}</a>
+                {{-- <a class="btn btn-primary py-3 px-5" href="">{{ trans('about.read_more') }}</a> --}}
             </div>
         </div>
     </div>
@@ -53,9 +96,24 @@
         <div class="row g-3">
             <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
                 <h2 class="section-title">{{ trans('features.title') }}</h2>
-                <h6 class="display-5 mb-4">{{ trans('features.headline') }}</h6>
+                <h6 class="display-6 mb-4">{{ trans('features.headline') }}</h6>
+
+
+
+
+             @foreach (range(1, 5) as $i)
+            <p class="d-flex align-items-start">
+                <span class="text-primary fw-bold me-2 mt-1">{{ $i - 0 }}.</span>
+                {!! trans("about.feature.part$i") !!}
+            </p>
+            @endforeach
+
+
+
+
                 <div class="row g-4">
                     <div class="col-12">
+
                         <div class="d-flex align-items-start" style="font-size: 17px">
                             <img class="flex-shrink-0" src="{{asset('img/icons/icon-2.png')}}" alt="Icon">
                             <div class="ms-4">
@@ -64,7 +122,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-12">
+                    {{-- <div class="col-12">
                         <div class="d-flex align-items-start">
                             <img class="flex-shrink-0" src="{{asset('img/icons/icon-3.png')}}" alt="Icon">
                             <div class="ms-4">
@@ -72,7 +130,7 @@
                                 <p class="mb-0">{{ trans('features.vision.description') }}</p>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
                     <div class="col-12">
                         <div class="d-flex align-items-start">
                             <img class="flex-shrink-0" src="{{asset('img/icons/icon-4.png')}}" alt="Icon">

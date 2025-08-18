@@ -22,8 +22,8 @@
             <h1 class="display-3 text-white mb-4 animated slideInDown">{{trans('header.projects')}}</h1>
             <nav aria-label="breadcrumb animated slideInDown">
                 <ol class="breadcrumb justify-content-center mb-0">
-                    <li class="breadcrumb-item"><a href="#">{{trans('home.house')}}</a></li>
-                    <li class="breadcrumb-item"><a href="#"></a></li>
+                    <li class="breadcrumb-item"><a href="{{ route('home') }}">{{trans('home.house')}}</a></li>
+                    {{-- <li class="breadcrumb-item"><a href="#"></a></li> --}}
                     <li class="breadcrumb-item active" aria-current="page">{{trans('header.projects')}}</li>
                 </ol>
             </nav>

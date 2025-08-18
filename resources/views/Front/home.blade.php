@@ -27,21 +27,49 @@
 
 
 <!-- About Start -->
-<div class="container-xxl  facts about">
+<div class="container-xxl py-5 about">
     <div class="container">
         <div class="row g-5">
             <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
                 <div class="about-img">
-                    <img class="img-fluid" src="img/about-1.jpg" alt="">
-                    <img class="img-fluid" src="img/about-2.jpg" alt="">
+                    <img class="img-fluid" src="{{asset('img/about-1.jpg')}}" alt="">
+                    <img class="img-fluid" src="{{asset('img/about-2.jpg')}}" alt="">
                 </div>
             </div>
             <div class="col-lg-6 wow fadeIn" style="font-size: 17px" data-wow-delay="0.5s">
                 <h2 class="section-title">{{ trans('about.title') }}</h2>
                 <h6 class="display-6 mb-4">{{ trans('about.headline') }}</h6>
-                <p>{{ trans('about.description.part1') }}</p>
+                <p class="d-flex align-items-start">
+                    <i class="fa fa-check text-primary me-2 mt-1"></i>
+                    {{ trans('about.description.part1') }}
+                </p>
+
+
+                <p class="d-flex align-items-start">
+                    <i class="fa fa-check text-primary me-2 mt-1"></i>
+                    {{ trans('about.description.part2') }}
+                </p>
+                <p class="d-flex align-items-start">
+                    <i class="fa fa-check text-primary me-2 mt-1"></i>
+                    {{ trans('about.description.part3') }}
+                </p>
+                <p class="d-flex align-items-start">
+                    <i class="fa fa-check text-primary me-2 mt-1"></i>
+                    {{ trans('about.description.part4') }}
+                </p>
+                <p class="d-flex align-items-start">
+                    <i class="fa fa-check text-primary me-2 mt-1"></i>
+                    {{ trans('about.description.part5') }}
+                </p>
+                <p class="d-flex align-items-start">
+                    <i class="fa fa-check text-primary me-2 mt-1"></i>
+                    {{ trans('about.description.part6') }}
+                </p>
+
+
+                {{-- <p>{{ trans('about.description.part1') }}</p>
                 <p>{{ trans('about.description.part2') }}</p>
-                <p>{{ trans('about.description.part3') }}</p>
+                <p>{{ trans('about.description.part3') }}</p> --}}
                 <div class="d-flex align-items-center mb-5">
                     <div class="d-flex flex-shrink-0 align-items-center justify-content-center border border-5 border-primary" style="width: 120px; height: 120px;">
                         <h1 class="display-1 mb-n2" >25</h1>
@@ -50,13 +78,12 @@
                         <h3>{{ trans('about.years_working_experience') }}</h3>
                     </div>
                 </div>
-                <a class="btn btn-primary py-3 px-5" href="">{{ trans('about.read_more') }}</a>
+                <a class="btn btn-primary py-3 px-5" href="{{ route('about') }}">{{ trans('about.read_more') }}</a>
             </div>
         </div>
     </div>
 </div>
 <!-- About End -->
-
 
 
 <!-- Service Start -->
