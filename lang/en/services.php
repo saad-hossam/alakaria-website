@@ -1,7 +1,7 @@
 <?php
 return [
     "services_title" => "Our Services",
-    "services_subtitle" => "We Focus On Modern Architecture And Interior Design",
+    "services_subtitle" => "We offer integrated solutions that exceed your expectations and combine innovation with precision in execution.",
     "service_1_title" => "Production",
     "service_1_description" => "We take pride in producing our products according to the highest quality standards to meet our diverse clients' needs. Our production process is meticulously designed to ensure that each product not only meets but exceeds industry standards. We focus on using high-quality raw materials and applying advanced manufacturing techniques, ensuring efficiency and sustainability at every stage of production. By maintaining stringent quality control measures, we ensure that our customers receive only the best, whether they are small businesses or large institutions.",
 

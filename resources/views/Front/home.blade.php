@@ -91,7 +91,7 @@
     <div class="container">
         <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
             <h4 class="section-title">{{trans('services.services_title')}}</h4>
-            <h3 class="display-6 mb-4">{{trans('services.services_subtitle')}}</h3>
+            <h3 class="display-7 mb-4">{{trans('services.services_subtitle')}}</h3>
         </div>
         <div class="row g-4">
             <!-- Always Visible Services -->
@@ -168,7 +168,7 @@
     <div class="container">
         <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
             <h4 class="section-title">{{trans('projects.our_projects')}}</h4>
-            <h3 class="display-5 mb-4">{{trans('projects.projects_body')}}</h3>
+            <h3 class="display-7 mb-4">{{trans('projects.projects_body')}}</h3>
         </div>
         <div class="row g-4 p-3 wow fadeInUp" style="border:1px solid rgb(229, 218, 218);border-style:dashed" data-wow-delay="0.3s">
             <div class="col-lg-4">
@@ -222,7 +222,7 @@
 <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
 
     <h2 class="section-title">{{trans('home.heading.title')}}</h2>
-    <h3 class="display-5 mb-4">{{trans('home.heading.subtitle')}}</h3>
+    <h3 class="display-7 mb-4">{{trans('home.heading.subtitle')}}</h3>
 </div>
 <!-- </div> -->
 

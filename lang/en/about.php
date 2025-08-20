@@ -13,11 +13,11 @@ return [
     ],
 
     'feature' => [
-        'part1' => '<strong>Extensive Experience: </strong> Years of successful fieldwork in developing diverse projects.',
-        'part2' => '<strong>Guaranteed Quality: </strong> We rely on the latest technologies and the best standards in construction and development.',
-        'part3' => '<strong>Future Vision: </strong> We ensure that our projects represent a successful long-term investment.',
-        'part4' => '<strong>Client Trust: </strong> A solid track record of customer satisfaction and long-term partnerships.',
-        'part5' => '<strong>Diversity in Projects: </strong> From luxury residential units to tourist resorts and commercial complexes <br/> safe medical waste disposal facilities, upgrading government buildings, and developing educational institutions.',
+        'part1' => '<b>Extensive Experience: </b> Years of successful fieldwork in developing diverse projects.',
+        'part2' => '<b>Guaranteed Quality: </b> We rely on the latest technologies and the best standards in construction and development.',
+        'part3' => '<b>Future Vision: </b> We ensure that our projects represent a successful long-term investment.',
+        'part4' => '<b>Client Trust: </b> A solid track record of customer satisfaction and long-term partnerships.',
+        'part5' => '<b>Diversity in Projects: </b> From luxury residential units to tourist resorts and commercial complexes <br/> safe medical waste disposal facilities, upgrading government buildings, and developing educational institutions.',
     ],
 
     'years_working_experience' => 'Years of Working Experience',
