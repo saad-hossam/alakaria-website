@@ -64,14 +64,11 @@
                                             @endif
                                         </td>
                                         <td>
-                                        @can('video-edit')
 
                                             <a href="{{ route('videos.edit', $video->id) }}" class="btn btn-sm btn-info me-3">
                                                 <i class="fa fa-edit"></i>
                                             </a>
-                                            @endcan
 
-                                            @can('video-delete')
 
                                             <form action="{{ route('videos.destroy', $video->id) }}" method="POST" style="display: inline; ms-5">
                                                 @csrf
@@ -80,7 +77,6 @@
                                                     <i class="fa fa-trash"></i>
                                                 </button>
                                             </form>
-                                            @endcan
 
                                         </td>
                                     </tr>
