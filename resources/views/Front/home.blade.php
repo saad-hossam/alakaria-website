@@ -12,6 +12,13 @@ function getYoutubeThumbnail($url)
 }
 
 @endphp
+
+<script>
+    window.Laravel = {
+        csrfToken: '{{ csrf_token() }}'
+    };
+</script>
+
 @extends("layouts.front.master")
 
 @section('content')
@@ -256,7 +263,7 @@ function getYoutubeThumbnail($url)
                         <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
                             <div class="video_card wow fadeInUp" data-wow-delay="0.3s" data-wow-duration="1.3s">
                                 <div class="video_thumbnail">
-                                    <div class="video-badge"><i class="fas fa-play"></i></div>
+                                    <div class="video-badge"></div>
                                     @if($video->video_url)
                                         <img
                                             id="thumb-{{ $video->id }}"
@@ -332,7 +339,7 @@ function getYoutubeThumbnail($url)
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="videoModalLabel"></h5>
-                    <button type="button" class="modal-close-btn btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <button type="button" class="btn btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body p-0">
                     <div class="video-container">
