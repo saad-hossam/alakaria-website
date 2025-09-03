@@ -25,6 +25,25 @@ return[
     'heading' => [
         'title' => 'شركاؤنا',
         'subtitle' => 'شركاؤنا فى النجاح   ',
+
     ],
+
+      'video_library'=>'مكتبة الفيديوهات',
+    'video_library_desc'=>'اكتشف مجموعتنا من الفيديوهات التي تعرض مشاريعنا  ',
+    'our_videos'=>'فيديوهاتنا',
+    'video_library_subtitle'=>'استكشف أحدث فيديوهاتنا وابق على اطلاع بأحدث مشاريعنا ',
+    'video_categories'=>'فئات الفيديو',
+    'product_demos'=>'عروض المنتجات',
+    'product_demos_desc'=>'شاهد منتجاتنا في العمل',
+    'manufacturing'=>'عملية التصنيع',
+    'manufacturing_desc'=>'خلف الكواليس من إنتاجنا',
+    'innovation'=>'الابتكار والتصميم',
+    'innovation_desc'=>'أحدث الاتجاهات والابتكارات',
+    'customer_stories'=>'قصص العملاء',
+    'customer_stories_desc'=>'تجارب حقيقية من عملائنا',
+    'no_videos'=>'لا توجد فيديوهات متاحة',
+    'no_videos_desc'=>'نحن نعمل حاليًا على إضافة فيديوهات إلى مكتبتنا. يرجى التحقق مرة أخرى قريبًا!',
+    'quality'=>'جودة',
+    'video'=>'فيديوهات'
 
 ];

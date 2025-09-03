@@ -40,6 +40,7 @@
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet">
+        <link rel="stylesheet" href="{{ URL::asset('assets/front/css/video.css') }}">
 
 
 
@@ -77,16 +78,16 @@
             document.addEventListener('DOMContentLoaded', function () {
                 // لما تضغط على أي dropdown-toggle
                 var dropdownToggles = document.querySelectorAll('.navbar .dropdown-toggle');
-            
+
                 dropdownToggles.forEach(function(toggle) {
                     toggle.addEventListener('click', function(e) {
                         var parent = this.parentElement;
-            
+
                         if (parent.classList.contains('dropdown-submenu') || parent.classList.contains('dropdown')) {
                             e.preventDefault(); // امنع التنقل لو فيه submenu
-            
+
                             parent.classList.toggle('show');
-            
+
                             // هات السب منيو اللي تحته وافتحه
                             var submenu = parent.querySelector('.dropdown-menu');
                             if (submenu) {
@@ -95,7 +96,7 @@
                         }
                     });
                 });
-            
+
                 // لو ضغطت برا، اقفل أي منيو مفتوح
                 document.addEventListener('click', function (e) {
                     if (!e.target.closest('.navbar')) {
@@ -106,9 +107,9 @@
                 });
             });
             </script>
-            
-            
-            
+
+
+
         <script>
             window.addEventListener('scroll', function() {
                 var navbar = document.querySelector('.navbar');
@@ -149,6 +150,54 @@
     <script src="{{asset('js/main.js')}}"></script>
 
     @endif
+
+<script>
+function playVideo(videoUrl, videoTitle, videoId) {
+    // set video title
+    document.getElementById('videoModalLabel').innerText = videoTitle;
+
+    // get iframe element
+    const iframe = document.getElementById('videoIframe');
+
+    // convert YouTube watch URL to embed format
+    let embedUrl = videoUrl;
+    if (videoUrl.includes("watch?v=")) {
+        embedUrl = videoUrl.replace("watch?v=", "embed/");
+    } else if (videoUrl.includes("youtu.be/")) {
+        embedUrl = videoUrl.replace("youtu.be/", "www.youtube.com/embed/");
+    }
+
+    // add autoplay
+    iframe.src = embedUrl + "?autoplay=1";
+
+    // show modal
+    const modal = new bootstrap.Modal(document.getElementById('videoModal'));
+    modal.show();
+
+    // increment views (optional, from earlier solution)
+    fetch(`/videos/${videoId}/increment-views`, {
+        method: "POST",
+        headers: {
+            "X-CSRF-TOKEN": window.Laravel.csrfToken,
+            "Content-Type": "application/json"
+        },
+    })
+    .then(res => res.json())
+    .then(data => {
+        document.querySelector(`#video-views-${videoId}`).innerHTML =
+            `<i class="fa fa-eye"></i> ${data.views}`;
+    })
+    .catch(err => console.error("Error incrementing views:", err));
+}
+
+// stop video when modal closes
+document.getElementById('videoModal').addEventListener('hidden.bs.modal', function () {
+    document.getElementById('videoIframe').src = "";
+});
+</script>
+
+
+
 
 </body>
 

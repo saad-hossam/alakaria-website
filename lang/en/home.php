@@ -29,6 +29,22 @@ return[
         'subtitle' => 'Our partners in success',
     ],
 
-
+'video_library'=>'Video Library',
+    'video_library_desc'=>'Discover our collection of videos showcasing our projects',
+    'our_videos'=>'Our Videos',
+    'video_library_subtitle'=>'Explore our latest videos and stay updated with our latest projects ',
+    'video_categories'=>'Video Categories',
+    'product_demos'=>'Product Demonstrations',
+    'product_demos_desc'=>'See our products in action',
+    'manufacturing'=>'Manufacturing Process',
+    'manufacturing_desc'=>'Behind the scenes of our production',
+    'innovation'=>'Innovation & Design',
+    'innovation_desc'=>'Latest trends and innovations',
+    'customer_stories'=>'Customer Stories',
+    'customer_stories_desc'=>'Real experiences from our customers',
+    'no_videos'=>'No Videos Available',
+    'no_videos_desc'=>'We are currently working on adding videos to our library. Please check back soon!',
+ 'quality'=>'Quality',
+    'video'=>'Videos',
 
 ];

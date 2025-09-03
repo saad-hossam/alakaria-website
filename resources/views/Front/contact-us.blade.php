@@ -5,29 +5,15 @@
 
 
 
-<!-- Page Header Start -->
-<div class="container-fluid page-header py-5 mb-5 wow fadeIn" data-wow-delay="0.1s">
-    <div class="container py-5">
-        <h1 class="display-1 text-white animated slideInDown" data-translate="page_header.breadcrumb_title">
-            {{ __('contact.page_header.breadcrumb_title') }}
-        </h1>
+ <!-- Page Header Start -->
+ <div class="container-fluid page-header bg-primary py-5 mb-5 wow fadeIn" data-wow-delay="0.1s" style=" margin-top: 10px;">
+    <div class="container text-center py-5">
+        <h1 class="display-3 text-white mb-4 animated slideInDown">{{trans('header.contact_us')}}</h1>
         <nav aria-label="breadcrumb animated slideInDown">
-            <ol class="breadcrumb text-uppercase mb-0">
-                <li class="breadcrumb-item">
-                    <a class="text-white" href="#" data-translate="page_header.breadcrumb_home">
-                        {{ __('contact.page_header.breadcrumb_home') }}
-                    </a>
-                </li> /
-                {{-- /<li class="breadcrumb-item">
-                    <a class="text-white" href="#" data-translate="page_header.breadcrumb_pages">
-                        {{ __('contact.page_header.breadcrumb_pages') }}
-                    </a>
-                </li> --}}
-                <li class="breadcrumb-item text-primary active" aria-current="page">
-                    <a class="text-white" href="#" data-translate="page_header.breadcrumb_contact">
-                        {{ __('contact.page_header.breadcrumb_contact') }}
-                    </a>
-                </li>
+            <ol class="breadcrumb justify-content-center mb-0">
+                    <li class="breadcrumb-item"><a href="{{ route('home') }}">{{trans('home.house')}}</a></li>
+                <li class="breadcrumb-item"><a href="#"></a></li>
+                <li class=" " aria-current="page">{{trans('header.contact_us')}}</li>
             </ol>
         </nav>
     </div>
@@ -37,9 +23,9 @@
     <h4 class="section-title" data-translate="contact_section.section_title">
         {{ __('contact.contact_section.section_title') }}
     </h4>
-    <h6 class="display-5 mb-4" data-translate="contact_section.section_subtitle">
+    <h3 class=" mb-4" data-translate="contact_section.section_subtitle">
         {{ __('contact.contact_section.section_subtitle') }}
-    </h6>
+    </h3>
 </div>
   <!-- Google Map Start -->
   <div class="container  px-0 wow fadeIn" data-wow-delay="0.1s">

@@ -22,5 +22,7 @@ return[
     'first_text' => 'Welcome to Colmar',
     'second_text' => 'We offer the best dairy products',
     // 'third_text' => 'I am a web developer',
+        'videos'=>'VIDEOS'
+
 
 ];

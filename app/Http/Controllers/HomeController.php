@@ -9,6 +9,7 @@ use App\Models\Partner;
 use App\Models\Project;
 use App\Models\Service;
 use App\Models\Department;
+use App\Models\Video;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -25,6 +26,7 @@ class HomeController extends Controller
         $departments = Department::active()->with('translations')->get(); // Departments with translations
         $projects = Project::active()->with('translations')->paginate(4); // Paginate projects
         $services = Service::active()->paginate(3); // Paginate services
+        $videos = Video::active()->orderBy('created_at', 'desc')->paginate(3);
 
         return view('Front.home', [
             'sliders' => $sliders,
@@ -32,6 +34,7 @@ class HomeController extends Controller
             'departments' => $departments,
             'partners'=>$partners,
            'services' => $services,
+              'videos' => $videos,
         ]);
     }
 
@@ -113,5 +116,21 @@ public function News()
         return view('front.news.show', compact('news'));
     }
 
+  public function videos(){
+        $videos = Video::active()->orderBy('created_at', 'desc')->paginate(6);
+
+
+
+        return view('Front.videos', [
+            'videos' => $videos
+        ]);
+    }
+
+   public function incrementViews($id)
+{
+    $video = Video::findOrFail($id);
+    $video->increment('views'); // atomic increment
+    return response()->json(['views' => $video->views]);
+}
 
 }

@@ -20,6 +20,7 @@ return[
     'message'=>'الرساله',
     'sales'=>'الخصومات',
     // 'cataloges'=>'كتالوج',
+    'videos'=>'الفيديوهات',
 
     'instock'=>'المخزن',
     'read_more' => 'اقرأ المزيد',

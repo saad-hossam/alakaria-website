@@ -72,6 +72,7 @@ Route::group(['prefix'=>'/admin/','middleware' => ['auth','admin']], function ()
     Route::resource('projects', ProjectController::class);
     Route::get('projects/{project}/images', [ProjectController::class, 'showImages'])->name('projects.showImages');
     Route::resource('news', NewsController::class);
+    Route::resource('videos', \App\Http\Controllers\VideoController::class);
 
 
 
@@ -107,8 +108,8 @@ Route::group(
         Route::get('/projects/department/{department_id}', [HomeController::class, 'projects_by_department'])->name('projects.by_department');
 Route::get('/news', [HomeController::class, 'news'])->name('front.news');
 Route::get('/news/{slug}', [HomeController::class, 'showNews'])->name('front.news.show');
-
-
+Route::get('/videos',  [HomeController::class, 'videos'])->name('videos');
+Route::post('/videos/{id}/increment-views', [HomeController::class, 'incrementViews'])->name('videos.incrementViews');
     }
 );
 
