@@ -94,62 +94,51 @@ class ProjectController extends Controller
         'additionalImages'));
     }
 
-  public function update(Request $request, Project $project)
+ public function update(Request $request, Project $project)
 {
-    $data = $request->validate([
-        'name' => 'nullable|string|max:255',
-        'description' => 'nullable|string',
-        'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-        'images.*' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-        'status' => 'required',
-
-    ]);
-
-
-
-    // 1. تحديث الصورة الرئيسية إن تم رفع واحدة جديدة
-    if ($request->hasFile('image')) {
-        $oldMainPath = public_path('images/projects/main' . $project->image);
-
-        if (is_file($oldMainPath)) {
-            unlink($oldMainPath);
-        }
-
-
-        $data['image'] = $this->saveImage('images/projects/main', $request->file('image'));
-    } else {
-        // الاحتفاظ بالصورة الرئيسية القديمة
-        $data['image'] = $project->image;
+    // تحديث الترجمات
+    foreach (config('app.languages') as $lang => $label) {
+        $project->translateOrNew($lang)->name = $request[$lang]['name'];
+        $project->translateOrNew($lang)->description = $request[$lang]['description'];
     }
 
-    // 2. التعامل مع الصور الإضافية (images[])
+    // تحديث الصورة الرئيسية
+    if ($request->hasFile('image')) {
+        $oldPath = public_path('images/projects/main/' . $project->image);
+
+        if (file_exists($oldPath)) {
+            unlink($oldPath);
+        }
+
+        $project->image = $this->saveImage('images/projects/main', $request->file('image'));
+    }
+
+    // تحديث الصور الإضافية
     if ($request->hasFile('images')) {
-        // حذف الصور القديمة
-        foreach ((array) $project->images as $oldImage) {
-            $oldImagePath = public_path('images/projects/gallary/' . $oldImage);
-            if (file_exists($oldImagePath)) {
-                unlink($oldImagePath);
+        foreach ((array) $project->images as $img) {
+            $path = public_path('images/projects/gallary/' . $img);
+            if (file_exists($path)) {
+                unlink($path);
             }
         }
 
-        // حفظ الصور الجديدة
         $newImages = [];
-        foreach ($request->file('images') as $image) {
-            $newImages[] = $this->saveImage('images/projects/gallary', $image);
+        foreach ($request->file('images') as $img) {
+            $newImages[] = $this->saveImage('images/projects/gallary', $img);
         }
 
-        $data['images'] = $newImages;
-    } else {
-        // الاحتفاظ بالصور القديمة
-        $data['images'] = $project->images;
+        $project->images = $newImages;
     }
-    $project->status = $request->input('status');
 
-    // 3. تحديث المشروع
-    $project->update($data);
+    // الحالة
+    $project->status = $request->status;
+
+    // حفظ كل شيء (يشمل الترجمات)
+    $project->save();
 
     return redirect()->route('projects.index')->with('success', 'تم التحديث بنجاح');
 }
+
 
 
 
