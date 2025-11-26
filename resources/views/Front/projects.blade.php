@@ -3,55 +3,91 @@
 @section('content')
 
 <style>
-    .project-item {
+/* ---------- Project Card ---------- */
+.project-item {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Initial shadow */
-    border-radius: 10px;
+    border-radius: 12px;
     overflow: hidden;
+    background: #fff;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.08);
+    text-align: center;
 }
 
 .project-item:hover {
-    transform: scale(1.05);
-    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+    transform: translateY(-5px);
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.15);
 }
 
+/* ---------- Image Unified Size ---------- */
+.project-img {
+    width: 100%;
+    height: 300px;             /* Fixed height for ALL images */
+    object-fit: cover;         /* No distortion */
+    object-position: center;
+    border-bottom: 1px solid #eee;
+}
+
+/* ---------- Title ----------- */
+.project-item h5 {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 18px 0 10px;
+    color: #0d6efd;
+}
+
+/* ---------- Mobile Responsive ---------- */
+@media (max-width: 576px) {
+    .project-img {
+        height: 200px;         /* smaller size on mobile */
+    }
+}
 </style>
-    <!-- Page Header Start -->
-    <div class="container-fluid page-header bg-primary py-5 mb-5 wow fadeIn" data-wow-delay="0.1s">
-        <div class="container text-center py-5">
-            <h1 class="display-3 text-white mb-4 animated slideInDown">{{trans('header.projects')}}</h1>
-            <nav aria-label="breadcrumb animated slideInDown">
-                <ol class="breadcrumb justify-content-center mb-0">
-                    <li class="breadcrumb-item"><a href="{{ route('home') }}">{{trans('home.house')}}</a></li>
-                    {{-- <li class="breadcrumb-item"><a href="#"></a></li> --}}
-                    <li class="breadcrumb-item active" aria-current="page">{{trans('header.projects')}}</li>
-                </ol>
-            </nav>
-        </div>
+
+
+
+<!-- Page Header Start -->
+<div class="container-fluid page-header bg-primary py-5 mb-5 wow fadeIn" data-wow-delay="0.1s">
+    <div class="container text-center py-5">
+        <h1 class="display-3 text-white mb-4 animated slideInDown">{{ trans('header.projects') }}</h1>
+        <nav aria-label="breadcrumb animated slideInDown">
+            <ol class="breadcrumb justify-content-center mb-0">
+                <li class="breadcrumb-item"><a href="{{ route('home') }}">{{ trans('home.house') }}</a></li>
+                <li class="breadcrumb-item active">{{ trans('header.projects') }}</li>
+            </ol>
+        </nav>
     </div>
-    <!-- Page Header End -->
+</div>
+<!-- Page Header End -->
 
 
-    <div class="container-xxl py-5">
-        <div class="container">
-            {{-- <h1 class="display-6">{{ $department->translate(app()->getLocale())->name }}</h1> --}}
-            {{-- <p>{{ trans('header.projects_in_department') }}</p> --}}
 
-            <div class="row">
-                @foreach ($projects as $project)
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="project-item text-center">
-                        <img src="{{ asset('images/projects/main/' . $project->image) }}" class="img-fluid w-100" alt="{{ $project->name }}">
-                        <h5 class="mt-3">{!! $project->translate(app()->getLocale())->name !!}</h5>
-                        <a href="{{ route('project_details', $project->id) }}" class="btn btn-primary py-3 px-5 mt-3 mb-3">{{trans('about.read_more')}}</a>
-                    </div>
+<div class="container-xxl py-5">
+    <div class="container">
+
+        <div class="row g-4">
+            @foreach ($projects as $project)
+            <div class="col-lg-4 col-md-6">
+                <div class="project-item">
+
+                    <!-- Image (Same Size for All) -->
+                    <img src="{{ asset('images/projects/main/' . $project->image) }}"
+                         class="project-img"
+                         alt="{{ $project->name }}">
+
+                    <!-- Name -->
+                    <h5>{!! $project->translate(app()->getLocale())->name !!}</h5>
+
+                    <!-- Button -->
+                    <a href="{{ route('project_details', $project->id) }}"
+                       class="btn btn-primary py-2 px-4 mb-4">
+                       {{ trans('about.read_more') }}
+                    </a>
                 </div>
-
-
-                @endforeach
             </div>
+            @endforeach
         </div>
-    </div>
 
+    </div>
+</div>
 
 @endsection

@@ -215,7 +215,15 @@ function getYoutubeThumbnail($url)
                                 </div>
                                 <div class="col-md-6 text-center h-100">
                                     <h1 class="mb-3">{!! $project->translate(app()->getLocale())->name !!}</h1>
-                                    <!-- <p class="mb-4">{!! $project->translate(app()->getLocale())->description !!}</p> -->
+@php
+    $desc = str_replace('&nbsp;', ' ', $project->translate(app()->getLocale())->description);
+    $desc = strip_tags($desc);
+    $preview = \Illuminate\Support\Str::words($desc, 30, '...');
+@endphp
+
+<p>{{ $preview }}</p>
+
+
                                     {{-- <p><i class="fa fa-check text-primary me-3"></i>{{ $project->design_approach }}</p> --}}
                                     {{-- <p><i class="fa fa-check text-primary me-3"></i>{{ $project->innovative_solutions }}</p> --}}
                                     {{-- <p><i class="fa fa-check text-primary me-3"></i>{{ $project->project_management }}</p> --}}
