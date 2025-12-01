@@ -33,9 +33,13 @@
     }
 
     .project-item img {
-        border-radius: 8px;
-        transition: transform 0.3s ease-in-out;
-    }
+    width: 86%;
+    height: 50vh; /* اختار أي ارتفاع يناسب التصميم */
+    object-fit: contain;
+    object-position: center;
+    border-radius: 8px;
+}
+
 
     .project-item:hover img {
         transform: scale(1.02);
