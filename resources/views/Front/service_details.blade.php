@@ -128,7 +128,7 @@
 <!-- HERO SECTION -->
 <div class="service-hero">
     <h1>{{ trans('header.our_services') }}</h1>/
-    <p>{!!  service->translate(app()->getLocale())->name !!}</p>
+    <p>{!!  $service->translate(app()->getLocale())->name !!}</p>
 </div>
 
 <!-- MAIN CARD -->
