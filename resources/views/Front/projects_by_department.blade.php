@@ -33,9 +33,9 @@
     }
 
     .project-item img {
-    width: 86%;
-    height: 50vh; /* اختار أي ارتفاع يناسب التصميم */
-    object-fit: contain;
+    width: 100%;
+    height: 300px; /* اختار أي ارتفاع يناسب التصميم */
+    object-fit: cover;
     object-position: center;
     border-radius: 8px;
 }
