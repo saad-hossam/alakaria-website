@@ -1,6 +1,6 @@
 /* Hero Section */
 .video-hero-section {
-    background: linear-gradient(135deg, #686765 0%, #f06a0f 100%);
+    background:  #b48e65 ;
     position: relative;
     min-height: 60vh;
     display: flex;
@@ -25,7 +25,6 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0,0,0,0.2);
 }
 
 .hero-content {

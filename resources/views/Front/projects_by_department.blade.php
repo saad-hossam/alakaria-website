@@ -5,12 +5,12 @@
 <!-- Page Header Start -->
 <div class="container-fluid page-header bg-primary py-5 mb-5 wow fadeIn" data-wow-delay="0.1s">
     <div class="container text-center py-5">
-        <h1 class="display-3 text-white mb-4 animated slideInDown">{{ trans('header.products') }}</h1>
+        <h1 class="display-3 text-white mb-4 animated slideInDown">{{ trans('header.projects') }}</h1>
         <nav aria-label="breadcrumb animated slideInDown">
             <ol class="breadcrumb justify-content-center mb-0">
                     <li class="breadcrumb-item"><a href="{{ route('home') }}">{{trans('home.house')}}</a></li>
-                {{-- <li class="breadcrumb-item"><a href="#"></a></li> --}}
-                <li class="breadcrumb-item active" aria-current="page">{{ trans('header.products') }}</li>
+                <li class="breadcrumb-item"><a href="#"></a></li>
+                <li class=" active" aria-current="page">{{ trans('header.projects') }}</li>
             </ol>
         </nav>
     </div>
@@ -53,7 +53,7 @@
                         <img src="{{ asset('images/projects/main/' . $project->image) }}" class="img-fluid" height="300px" alt="{{ $project->name }}">
                         <h5 class="pt-3">{!! $project->translate(app()->getLocale())->name !!}</h5>
                         <!-- <p>{!! $project->translate(app()->getLocale())->description !!}</p> -->
-                        <a href="{{ route('project_details', $project->id) }}" class="btn btn-primary py-3 px-5 mt-3 mb-3">{{trans('about.read_more')}}</a>
+                        <a href="{{ route('project_details', $project->id) }}" class="btn btn-primary py-3 px-5 mt-3 mb-3" style="border-radius: 25px">{{trans('about.read_more')}}</a>
                     </div>
                 </div>
             @endforeach

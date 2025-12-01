@@ -48,7 +48,7 @@
         </div>
         <!-- Show More Button -->
         <div class="text-center mt-4">
-            <button class="btn btn-primary" id="toggle-more">{{trans('projects.read_more')}}</button>
+            <button class="btn btn-primary" id="toggle-more" style="border-radius: 25px" >{{trans('projects.read_more')}}</button>
         </div>
     </div>
 </div>

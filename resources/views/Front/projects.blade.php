@@ -78,7 +78,7 @@
                     <h5>{!! $project->translate(app()->getLocale())->name !!}</h5>
 
                     <!-- Button -->
-                    <a href="{{ route('project_details', $project->id) }}"
+                    <a style="border-radius: 25px" href="{{ route('project_details', $project->id) }}"
                        class="btn btn-primary py-2 px-4 mb-4">
                        {{ trans('about.read_more') }}
                     </a>

@@ -27,7 +27,7 @@
                 <div class="card-body">
                     <h5 class="card-title">{{ $item->name }}</h5>
                     <p class="card-text">{{ Str::limit(strip_tags($item->description), 100) }}</p>
-                    <a href="" class="btn btn-primary">{{ __('Read More') }}</a>
+                    <a style="border-radius: 25px" href="" class="btn btn-primary">{{ __('Read More') }}</a>
                 </div>
             </div>
         </div>

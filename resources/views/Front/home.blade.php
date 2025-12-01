@@ -99,7 +99,7 @@ function getYoutubeThumbnail($url)
                         <h3>{{ trans('about.years_working_experience') }}</h3>
                     </div>
                 </div>
-                <a class="btn btn-primary py-3 px-5" href="{{ route('about') }}">{{ trans('about.read_more') }}</a>
+                <a style="border-radius: 25px" class="btn btn-primary py-3 px-5" href="{{ route('about') }}">{{ trans('about.read_more') }}</a>
             </div>
         </div>
     </div>
@@ -137,7 +137,7 @@ function getYoutubeThumbnail($url)
         </div>
         <!-- Show More Button -->
         <div class="text-center mt-4">
-           <a href="{{ route('services') }}" class="btn btn-primary" id="toggle-more"> {{trans('projects.read_more')}}
+           <a style="border-radius: 25px" href="{{ route('services') }}" class="btn btn-primary" id="toggle-more"> {{trans('projects.read_more')}}
            </a>
                 </div>
     </div>
@@ -168,8 +168,8 @@ function getYoutubeThumbnail($url)
                         <img class="fact-icon m-0" src="{{asset('images/departments/'.$department->image)}}" alt="Icon">
                     </div>
                     <h3 class="mb-2">{!! $department->translate(app()->getLocale())->name !!}</h3>
-                    <a href="{{route('projects.by_department',$department->id)}}">
-                    <button class="btn btn-primary mt-3">{{trans('about.fact_button')}}</button>
+                    <a href="{{route('projects.by_department',$department->id)}}" style="border-radius: 25px">
+                    <button class="btn btn-primary mt-3" style="border-radius: 25px">{{trans('about.fact_button')}}</button>
                 </a>
                 </div>
             </div>
@@ -187,64 +187,203 @@ function getYoutubeThumbnail($url)
 <!-- Project Start -->
 <div class="container-xxl project py-5">
     <div class="container">
+
+        <!-- Header -->
         <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-            <h4 class="section-title">{{trans('projects.our_projects')}}</h4>
-            <h3 class="display-7 mb-4">{{trans('projects.projects_body')}}</h3>
+            <h4 class="section-title">{{ trans('projects.our_projects') }}</h4>
+            <h3 class="display-7 mb-4">{{ trans('projects.projects_body') }}</h3>
         </div>
-        <div class="row g-4 p-3 wow fadeInUp" style="border:1px solid rgb(229, 218, 218);border-style:dashed" data-wow-delay="0.3s">
-            <div class="col-lg-4">
-                <div class="nav nav-pills d-flex justify-content-between w-100 h-100 me-4">
-                    @foreach($projects as $index => $project)
-                        <button class="nav-link w-100 d-flex align-items-center text-start   @if($index == 0) active @endif" data-bs-toggle="pill" data-bs-target="#tab-pane-{{ $index + 1 }}" type="button">
-                            <h3 class="m-0"> {!! $project->translate(app()->getLocale())->name !!}</h3>
 
-                            {{-- <h3 class="m-0">{{ str_pad($index + 1, 2, '0', STR_PAD_LEFT) }}. {!! $project->translate(app()->getLocale())->name !!}</h3> --}}
-                        </button>
-                    @endforeach
-                </div>
+        <div class="row g-4 p-3 wow fadeInUp" data-wow-delay="0.3s"
+            style="border:1px dashed rgb(229, 218, 218); border-radius:12px">
+
+            <!-- LEFT: Project List -->
+           <!-- LEFT: Project List -->
+        <div class="col-lg-4">
+            <div class="nav flex-column nav-pills w-100" id="project-tabs" role="tablist">
+
+                @foreach($projects as $index => $project)
+                <button
+                    class="nav-link project-tab d-flex align-items-center py-3 px-3 mb-2 rounded @if($index==0) active @endif"
+                    data-bs-toggle="pill"
+                    data-bs-target="#tab-pane-{{ $index+1 }}"
+                    type="button"
+                    role="tab">
+
+                    <div class="tab-number me-3">
+                        {{ str_pad($index+1, 2, '0', STR_PAD_LEFT) }}
+                    </div>
+
+                    <span class="fw-bold project-title">
+                        {!! $project->translate(app()->getLocale())->name !!}
+                    </span>
+
+                </button>
+                @endforeach
+
             </div>
+        </div>
+
+
+            <!-- RIGHT: Project Content -->
             <div class="col-lg-8">
-                <div class="tab-content w-100">
+                <div class="tab-content">
+
                     @foreach($projects as $index => $project)
-                        <div class="tab-pane fade @if($index == 0) show active @endif" id="tab-pane-{{ $index + 1 }}">
-                            <div class="row g-4 " >
-                                <div class="col-md-6" style="min-height: 400px;">
-                                    <div class="position-relative h-100">
-                                        <img class="position-absolute img-fluid w-100 " style=" height:100%" src="{{ asset('images/projects/main/' . $project->image) }}" style="object-fit: cover;" alt="">
-                                    </div>
+                    <div class="tab-pane fade @if($index==0) show active @endif"
+                        id="tab-pane-{{ $index+1 }}" role="tabpanel">
+
+                        <div class="row g-4">
+
+                            <!-- Image -->
+                            <div class="col-md-6">
+                                <div class="project-img-container">
+                                    <img src="{{ asset('images/projects/main/' . $project->image) }}"
+                                         class="img-fluid rounded shadow-sm"
+                                         alt="">
                                 </div>
-                                <div class="col-md-6 text-center h-100">
-                                    <h1 class="mb-3">{!! $project->translate(app()->getLocale())->name !!}</h1>
-@php
-    $desc = str_replace('&nbsp;', ' ', $project->translate(app()->getLocale())->description);
-    $desc = strip_tags($desc);
-    $preview = \Illuminate\Support\Str::words($desc, 30, '...');
-@endphp
+                            </div>
 
-<p>{{ $preview }}</p>
+                            <!-- Text -->
+                            <div class="col-md-6">
 
+                                <h3 class="fw-bold mb-3">{!! $project->translate(app()->getLocale())->name !!}</h3>
 
-                                    {{-- <p><i class="fa fa-check text-primary me-3"></i>{{ $project->design_approach }}</p> --}}
-                                    {{-- <p><i class="fa fa-check text-primary me-3"></i>{{ $project->innovative_solutions }}</p> --}}
-                                    {{-- <p><i class="fa fa-check text-primary me-3"></i>{{ $project->project_management }}</p> --}}
-                                    <a href="{{ route('project_details', $project->id) }}" class="btn btn-primary py-3 px-5 mt-3">{{trans('projects.read_more')}}</a>
-                                </div>
-                                {{-- <hr> --}}
+                                @php
+                                    $full = strip_tags($project->translate(app()->getLocale())->description);
+                                    $sentences = preg_split('/(\.|\!|\?)\s+/', $full);
+                                    $preview = implode('. ', array_slice($sentences, 0, 2)) . '...';
+                                @endphp
+
+                                <p class="text-muted" style="line-height: 1.7;">{{ $preview }}</p>
+
+                                <a href="{{ route('project_details', $project->id) }} "
+                                   class="btn btn-primary px-4 py-2 mt-2 " style="border-radius: 25px">
+                                   <i class="fa-solid fa-circle-info me-2"></i>
+                                   {{ trans('projects.read_more') }}
+                                </a>
+
                             </div>
                         </div>
+
+                    </div>
                     @endforeach
+
                 </div>
             </div>
+
         </div>
-        <!-- Show More Button -->
-        <div class="text-center mt-4 pt-3 ">
-            <a href="{{route('projects_all')}}"><button class="btn btn-primary px-5 py-2 rounded" id="toggle-more">{{trans('projects.read_more')}}</button>
+
+        <!-- Show All Projects -->
+        <div class="text-center mt-4 pt-3"  >
+            <a href="{{ route('projects_all') }}" >
+                <button class="btn btn-primary px-5 py-2 " style="border-radius: 25px" >
+                    {{ trans('projects.read_more') }}
+                </button>
             </a>
-            </div>
+        </div>
+
     </div>
 </div>
 <!-- Project End -->
 
+<style>
+    /* Active Tab */
+.nav-pills .nav-link.active {
+    background: #f1f1f1 !important;
+    color: #000 !important;
+    border-left: 4px solid #0d6efd;
+}
+
+/* Number Badge */
+.tab-number {
+    width: 40px;
+    height: 40px;
+    background: #e9f0ff;
+    border: 2px solid #b48e65;
+    color: #b48e65;
+    font-weight: bold;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .3s;
+}
+
+/* Tab container */
+.project-tab {
+    background: #ffffff;
+    border: 1px solid #e9e9e9;
+    transition: 0.3s;
+    box-shadow: 0 0 0 rgba(0,0,0,0.02);
+}
+
+/* Hover */
+.project-tab:hover {
+    background: #f7f9ff;
+    border-color: #d0ddff;
+}
+
+/* Active Tab */
+.project-tab.active {
+    background: #f1f5ff !important;
+    border-left: 4px solid #b48e65 !important;
+    border-color: #c6d7ff;
+    transform: scale(1.02);
+}
+
+.project-tab.active .tab-number {
+    background: #b48e65;
+    color: #fff;
+    border-color: #b48e65;
+}
+
+/* Title text */
+.project-title {
+    font-size: 16px;
+    line-height: 1.4;
+}
+
+/* Image box clean */
+.project-img-container {
+    height: 330px;
+    overflow: hidden;
+    border-radius: 12px;
+    background: #f4f4f4;
+}
+
+.project-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: .3s;
+}
+
+.project-img-container img:hover {
+    transform: scale(1.05);
+}
+
+
+/* Normal Hover */
+.nav-pills .nav-link:hover {
+    background: #fafafa;
+    transition: 0.3s;
+}
+
+/* Image Box */
+.project-img-container {
+    height: 330px;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.project-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+</style>
  <!-- Video Library Section Start -->
        <section class="video-library-section">
         <div class="container">

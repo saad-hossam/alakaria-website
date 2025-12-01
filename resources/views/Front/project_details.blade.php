@@ -5,7 +5,7 @@
 <style>
 /* ---------- Header ---------- */
 .page-header {
-    background:rgb(37, 37, 37) !important;
+    background:  #b48e65 ;
 }
 
 /* ---------- Main Image ---------- */
@@ -44,7 +44,7 @@
 
 .gallery-img:hover,
 .gallery-img.active {
-    border-color: #0d6efd;
+    border-color: #b48e65;
     transform: scale(1.08);
 }
 
@@ -64,7 +64,7 @@
 .project-box h1 {
     font-size: 30px;
     font-weight: 700;
-    color: #0d6efd;
+    color: #b48e65;
 }
 
 /* ---------- Department Badge ---------- */
@@ -76,7 +76,7 @@
     display: inline-flex;
     align-items: center;
     background: #e8f0ff;
-    color: #0d6efd;
+    color: #b48e65;
     font-weight: 600;
     font-size: 17px;
     padding: 10px 18px;
@@ -87,7 +87,7 @@
 }
 
 .dept-badge:hover {
-    background: #0d6efd;
+    background: #b48e65;
     color: #fff;
     transform: translateY(-2px);
     box-shadow: 0 6px 18px rgba(13,110,253,0.4);
@@ -123,7 +123,7 @@
     .project-box h1 {
     font-size: 20px;
     font-weight: 700;
-    color: #0d6efd;
+    color: #b48e65;
 }
 
 
