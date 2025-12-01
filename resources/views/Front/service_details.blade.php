@@ -128,7 +128,7 @@
 <!-- HERO SECTION -->
 <div class="service-hero">
     <h1>{{ trans('header.our_services') }}</h1>/
-    <p>{{ $service->translate(app()->getLocale())->name }}</p>
+    <p>{!!  service->translate(app()->getLocale())->name !!}</p>
 </div>
 
 <!-- MAIN CARD -->
@@ -138,12 +138,12 @@
         <!-- IMAGE -->
         <img src="{{ asset('images/services/' . $service->image) }}"
              class="service-img"
-             alt="{{ $service->translate(app()->getLocale())->name }}">
+             alt="{!! $service->translate(app()->getLocale())->name !!}">
 
         <!-- SERVICE NAME WITH ICON -->
         <h2>
             <i class="fa fa-cogs"></i>
-            {{ $service->translate(app()->getLocale())->name }}
+            {!! $service->translate(app()->getLocale())->name !!}
         </h2>
 
         <!-- DESCRIPTION BOX -->
