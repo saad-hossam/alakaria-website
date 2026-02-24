@@ -8,43 +8,43 @@
 
     <!-- Topbar Start -->
     <div class="top-bar container-fluid bg-dark p-0 wow fadeIn d-none d-lg-block" data-wow-delay="0.1s">
-                <div class=" ">
-<div class="col-lg-12 d-flex justify-content-start mx-5"  >
-        <div class=" align-items-center py-4 text-light ">                <span class="organization-text">
-                    {{ trans('header.organization_subtitle') }}
-                </span>
-            </div>
-    <div class="d-flex align-items-center py-3">
+         <div class="container ">
+            <div class="col-lg-12 d-flex justify-content-start ps-5"  >
+                    <div class=" align-items-center py-4 text-light ">                <span class="organization-text">
+                                {{ trans('header.organization_subtitle') }}
+                            </span>
+                        </div>
+                <div class="d-flex align-items-center py-3">
 
-        <a href="tel:+0123456789" class="mx-3 text-light text-decoration-none">
-            <i class="fa fa-phone-alt text-primary me-2"></i>
-            {{ trans('footer.mobile') }}
-        </a>
+                    <a href="tel:+0123456789" class="mx-3 text-light text-decoration-none">
+                        <i class="fa fa-phone-alt text-primary me-2"></i>
+                        {{ trans('footer.mobile') }}
+                    </a>
 
-        <a href="tel:+0123456789" class="mx-3 text-light text-decoration-none">
-            <i class="fa fa-fax text-primary me-2"></i>
-            {{ trans('footer.fax') }}
-        </a>
+                    <a href="tel:+0123456789" class="mx-3 text-light text-decoration-none">
+                        <i class="fa fa-fax text-primary me-2"></i>
+                        {{ trans('footer.fax') }}
+                    </a>
 
-        <a href="mailto:info@example.com" class="mx-3 text-light text-decoration-none">
-            <i class="fa fa-envelope-open text-primary me-2"></i>
-            {{ trans('footer.email_address') }}
-        </a>
+                    <a href="mailto:info@example.com" class="mx-3 text-light text-decoration-none">
+                        <i class="fa fa-envelope-open text-primary me-2"></i>
+                        {{ trans('footer.email_address') }}
+                    </a>
 
-    </div>
-     <div class="col-lg-3 links ">
-                <div class="h-100 d-inline-flex align-items-center py-3 ">
-                    <a class=" px-2" href=""></a>
-                    <a class=" px-2" href=""></a>
                 </div>
-                <div class="h-100 d-inline-flex align-items-center">
-                    <a class="btn btn-sm-square btn-outline-body me-3" href=""><i class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-sm-square btn-outline-body me-3" href=""><i class="fab fa-twitter"></i></a>
-                    <a class="btn btn-sm-square btn-outline-body me-3" href=""><i class="fab fa-linkedin-in"></i></a>
-                    <a class="btn btn-sm-square btn-outline-body me-3" href=""><i class="fab fa-instagram"></i></a>
-                </div>
+                <div class=" links ">
+                            <div class="h-100 d-inline-flex align-items-center py-3 ">
+                                <a class=" px-2" href=""></a>
+                                <a class=" px-2" href=""></a>
+                            </div>
+                            <div class="h-100 d-inline-flex align-items-center">
+                                <a class="btn btn-sm-square btn-outline-body me-3" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-sm-square btn-outline-body me-3" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-sm-square btn-outline-body me-3" href=""><i class="fab fa-linkedin-in"></i></a>
+                                <a class="btn btn-sm-square btn-outline-body me-3" href=""><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
             </div>
-</div>
 
 
         </div>
