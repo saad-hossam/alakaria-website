@@ -46,5 +46,6 @@ return[
     'no_videos_desc'=>'We are currently working on adding videos to our library. Please check back soon!',
  'quality'=>'Quality',
     'video'=>'Videos',
+    'project'=>'Project',
 
 ];
