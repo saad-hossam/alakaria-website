@@ -125,6 +125,12 @@ public function News()
             'videos' => $videos
         ]);
     }
+public function partners()
+{
+        $partners = Partner::active()->get();
+
+    return view('Front.partners', compact('partners'));
+}
 
    public function incrementViews($id)
 {

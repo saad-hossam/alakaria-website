@@ -8,8 +8,8 @@
 
     <!-- Topbar Start -->
     <div class="top-bar container-fluid bg-dark p-0 wow fadeIn d-none d-lg-block" data-wow-delay="0.1s">
-                <div class="row gx-0 d-none d-lg-flex ">
-<div class="col-lg-12 d-flex justify-content-center">
+                <div class=" ">
+<div class="col-lg-12 d-flex justify-content-start mx-5"  >
         <div class=" align-items-center py-4 text-light ">                <span class="organization-text">
                     {{ trans('header.organization_subtitle') }}
                 </span>
@@ -81,6 +81,7 @@
                 <a href="{{route('front.news')}}" class="nav-item nav-link" data-translate="header.nav.contact">{{trans('header.news')}}</a>
                 <a href="{{ route('videos') }}" class="nav-item nav-link" data-translate="header.nav.contact">{{ trans('home.video_library') }}</a>
 
+                <a href="{{ route('partners') }}" class="nav-item nav-link" data-translate="header.nav.partners">{{ trans('header.partners') }}</a>
 
                 {{-- <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" data-translate="header.nav.pages">{{trans('header.projects')}}</a>

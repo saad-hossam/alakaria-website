@@ -110,6 +110,7 @@ Route::get('/news', [HomeController::class, 'news'])->name('front.news');
 Route::get('/news/{slug}', [HomeController::class, 'showNews'])->name('front.news.show');
 Route::get('/videos',  [HomeController::class, 'videos'])->name('videos');
 Route::post('/videos/{id}/increment-views', [HomeController::class, 'incrementViews'])->name('videos.incrementViews');
+Route::get('/partners', [HomeController::class, 'partners'])->name('partners');
     }
 );
 

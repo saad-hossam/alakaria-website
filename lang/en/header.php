@@ -24,5 +24,7 @@ return[
     // 'third_text' => 'I am a web developer',
         'videos'=>'VIDEOS',
     'organization_subtitle' => 'One of the companies of the  AOI',
+    'partners' => ' Partners',
+
 
 ];
