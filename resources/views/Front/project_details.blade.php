@@ -152,8 +152,8 @@
 
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb justify-content-center mt-3">
-            <li class="breadcrumb-item"><a href="{{ route('home') }}" class="text-white-50">{{ trans('home.house') }}</a></li>
-            <li class="breadcrumb-item active text-white">{{ trans('header.projects') }}</li>
+            <li class="breadcrumb-item"><a href="{{ route('home') }}" class="text-white-50 mx-2">{{ trans('home.house') }}</a></li>
+            <li class="breadcrumb-item active text-white mx-2">{{ trans('header.projects') }}</li>
         </ol>
     </nav>
 </div>

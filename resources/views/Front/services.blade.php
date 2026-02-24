@@ -8,9 +8,9 @@
             <h1 class="display-3 text-white mb-4 animated slideInDown">{{trans('header.our_services')}}</h1>
             <nav aria-label="breadcrumb animated slideInDown">
                 <ol class="breadcrumb justify-content-center mb-0">
-                    <li class="breadcrumb-item"><a href="{{ route('home') }}">{{trans('home.house')}}</a></li>
+                    <li class="breadcrumb-item mx-2"><a href="{{ route('home') }}" class="mx-2">{{trans('home.house')}}</a></li>
                     {{-- <li class="breadcrumb-item"><a href="#"></a></li> --}}
-                    <li class="breadcrumb-item active" aria-current="page">{{trans('header.our_services')}}</li>
+                    <li class="breadcrumb-item active mx-2" aria-current="page">{{trans('header.our_services')}}</li>
                 </ol>
             </nav>
         </div>

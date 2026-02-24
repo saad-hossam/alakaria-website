@@ -2,19 +2,25 @@
 @section('content')
 
  <!-- Page Header Start -->
- <div class="container-fluid page-header bg-primary py-5 mb-5 wow fadeIn" data-wow-delay="0.1s" style=" margin-top: 10px;">
-    <div class="container text-center py-5">
-        <h1 class="display-3 text-white mb-4 animated slideInDown">{{trans('header.news')}}</h1>
-        <nav aria-label="breadcrumb animated slideInDown">
+ <!-- Page Header Start -->
+<div class="container-fluid  bg-primary py-5 mb-5 wow fadeIn" data-wow-delay="0.1s" style="margin-top: 10px;">
+    <div class="container text-center py-5 text-white">
+        <h1 class="display-4 fw-bold">{{ trans('header.news') }}</h1>
+        <nav aria-label="breadcrumb animated fadeInDown mt-3">
             <ol class="breadcrumb justify-content-center mb-0">
-                    <li class="breadcrumb-item"><a href="{{ route('home') }}">{{trans('home.house')}}</a></li>
-                               <li class="breadcrumb-item"><a href="#"></a></li>
-
-                    <li class=" " aria-current="page">{{trans('header.news')}}</li>
+                <li class="breadcrumb-item">
+                    <a href="{{ route('home') }}" class="text-light mx-2 ">{{trans('home.house')}}</a>
+                </li> /
+                <li class=" active text-white-50 mx-2">
+                    {{ trans('header.news') }}
+                </li>
             </ol>
         </nav>
     </div>
 </div>
+<!-- Page Header End -->
+
+
 <!-- Page Header End -->
 <div class="container py-5">
     <h2 class="text-center mb-4">{{ __('News') }}</h2>

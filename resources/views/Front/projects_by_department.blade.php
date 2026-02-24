@@ -3,14 +3,14 @@
 @section('content')
 
 <!-- Page Header Start -->
-<div class="container-fluid page-header bg-primary py-5 mb-5 wow fadeIn" data-wow-delay="0.1s">
+<div class="container-fluid  bg-primary py-5 mb-5 wow fadeIn" data-wow-delay="0.1s">
     <div class="container text-center py-5">
         <h1 class="display-3 text-white mb-4 animated slideInDown">{{ trans('header.projects') }}</h1>
         <nav aria-label="breadcrumb animated slideInDown">
             <ol class="breadcrumb justify-content-center mb-0">
-                    <li class="breadcrumb-item"><a href="{{ route('home') }}">{{trans('home.house')}}</a></li>
+                    <li class="breadcrumb-item"><a class="text-secondary mx-2" href="{{ route('home') }}">{{trans('home.house')}}</a></li>
                 <li class="breadcrumb-item"><a href="#"></a></li>
-                <li class=" active" aria-current="page">{{ trans('header.projects') }}</li>
+                <li class=" active mx-2" aria-current="page">{{ trans('header.projects') }}</li>
             </ol>
         </nav>
     </div>

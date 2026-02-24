@@ -8,16 +8,31 @@
 
     <!-- Topbar Start -->
     <div class="top-bar container-fluid bg-dark p-0 wow fadeIn d-none d-lg-block" data-wow-delay="0.1s">
-                <div class="row gx-0 d-none d-lg-flex px-5">
-            <div class="col-lg-7  ">
-                <div class="h-100 d-inline-flex align-items-center py-3 me-3">
-                    <a class="text-body px-4" href="tel:+0123456789"><i class="fa fa-phone-alt text-primary me-2 ps-2 "></i>{{ trans('footer.mobile') }}</a>
-                    <a class="text-body px-4" href="tel:+0123456789"><i class="fa fa-fax text-primary me-2 ps-2 "></i>{{ trans('footer.fax') }}</a>
-
-                    <a class="text-body px-4" href="mailto:info@example.com"><i class="fa fa-envelope-open text-primary me-2 ps-2"></i>{{ trans('footer.email_address') }}</a>
-                </div>
+                <div class="row gx-0 d-none d-lg-flex ">
+<div class="col-lg-12 d-flex justify-content-center">
+        <div class=" align-items-center py-4 text-light ">                <span class="organization-text">
+                    {{ trans('header.organization_subtitle') }}
+                </span>
             </div>
-            <div class="col-lg-5 links ">
+    <div class="d-flex align-items-center py-3">
+
+        <a href="tel:+0123456789" class="mx-3 text-light text-decoration-none">
+            <i class="fa fa-phone-alt text-primary me-2"></i>
+            {{ trans('footer.mobile') }}
+        </a>
+
+        <a href="tel:+0123456789" class="mx-3 text-light text-decoration-none">
+            <i class="fa fa-fax text-primary me-2"></i>
+            {{ trans('footer.fax') }}
+        </a>
+
+        <a href="mailto:info@example.com" class="mx-3 text-light text-decoration-none">
+            <i class="fa fa-envelope-open text-primary me-2"></i>
+            {{ trans('footer.email_address') }}
+        </a>
+
+    </div>
+     <div class="col-lg-3 links ">
                 <div class="h-100 d-inline-flex align-items-center py-3 ">
                     <a class=" px-2" href=""></a>
                     <a class=" px-2" href=""></a>
@@ -29,6 +44,9 @@
                     <a class="btn btn-sm-square btn-outline-body me-3" href=""><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
+</div>
+
+
         </div>
     </div>
     <!-- Topbar End -->
