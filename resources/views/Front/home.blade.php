@@ -34,7 +34,7 @@ function getYoutubeThumbnail($url)
                         <div class="row justify-content-center">
                             <div class="col-10 col-lg-8 text-center">
                                 <h3 class="display-6 text-white typewriter" >{{  trans('home.project')}} : {{$slide->translate(app()->getLocale())->title}}</h3>
-                                <a href="" class="btn btn-primary py-3 mt-5 px-5 animated slideInLeft">{{trans('about.read_more')}}</a>
+                                {{-- <a href="" class="btn btn-primary py-3 mt-5 px-5 animated slideInLeft">{{trans('about.read_more')}}</a> --}}
                             </div>
                         </div>
                     </div>
