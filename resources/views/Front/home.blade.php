@@ -255,7 +255,7 @@ function getYoutubeThumbnail($url)
                                     $preview = implode('. ', array_slice($sentences, 0, 2)) . '...';
                                 @endphp
 
-                                <p class="text-muted" style="line-height: 1.7;">{{ $preview }}</p>
+                                <p class="text-muted" style="line-height: 1.7;">{!! $preview !!}</p>
 
                                 <a href="{{ route('project_details', $project->id) }} "
                                    class="btn btn-primary px-4 py-2 mt-2 " style="border-radius: 25px">
