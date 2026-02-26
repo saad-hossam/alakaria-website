@@ -100,6 +100,7 @@ class ProjectController extends Controller
     foreach (config('app.languages') as $lang => $label) {
         $project->translateOrNew($lang)->name = $request[$lang]['name'];
         $project->translateOrNew($lang)->description = $request[$lang]['description'];
+
     }
 
     // تحديث الصورة الرئيسية
@@ -130,11 +131,15 @@ class ProjectController extends Controller
         $project->images = $newImages;
     }
 
-    // الحالة
-    $project->status = $request->status;
+  // الحالة
+$project->status = $request->status;
 
-    // حفظ كل شيء (يشمل الترجمات)
-    $project->save();
+// تحديث القسم 👇
+$project->department_id = $request->department_id;
+
+// حفظ كل شيء
+$project->save();
+
 
     return redirect()->route('projects.index')->with('success', 'تم التحديث بنجاح');
 }
