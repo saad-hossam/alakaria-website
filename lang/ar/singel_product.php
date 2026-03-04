@@ -3,7 +3,7 @@ return[
     'raw_material'=>'الماده الخام',
     'dimensions'=>'الابعاد',
     'price'=>'السعر',
-    'department'=>'القسم',
+    'department'=>'مجالات العمل',
     'category'=>'الفئه',
     'home'=>'الرئيسية',
     'product_detail'=>'تفاصيل المنتج',

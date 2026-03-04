@@ -18,7 +18,7 @@
     <div class="breadcrumb-header justify-content-between">
         <div class="my-auto">
             <div class="d-flex">
-                <h4 class="content-title mb-0 my-auto">تعديل قسم</h4>
+                <h4 class="content-title mb-0 my-auto">تعديل مجال</h4>
             </div>
         </div>
         @can('department-list')
@@ -98,7 +98,7 @@
 
                         <!-- Status -->
                         <div class="col-md-6 mg-t-20 mg-md-t-0">
-                            <label class="form-lable h5" for="status">حالة الخدمة</label>
+                            <label class="form-lable h5" for="status">حالة المجال</label>
                             <div class="form-group">
                                 <select class="form-control select2-search" id="status" name="status">
                                     <option value="active" {{ $department->status == 'active' ? 'selected' : '' }}>مفعل</option>

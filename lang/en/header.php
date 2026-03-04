@@ -4,7 +4,7 @@ return[
     'products'=>'PRODUCTS',
     'our_profile'=>'OUR PROFILE',
     'our_services'=>' SERVICES',
-    'our_departments'=>' DEPARTMENTS',
+    'our_departments'=>' FIELDS',
 'Alakaria'=>'Alakaria',
     'our_vision'=>'OUR VISION',
     'our_message'=>'OUR MESSAGE',

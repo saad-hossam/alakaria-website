@@ -31,9 +31,9 @@ function getYoutubeThumbnail($url)
                     <img src="{{ asset('images/sliders/'. $slide->image) }}" alt="" height="520px">
                                 <div class="owl-carousel-inner">
                     <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-10 col-lg-8 text-center">
-                                <h3 class="display-6 text-white typewriter" >{{  trans('home.project')}} : {{$slide->translate(app()->getLocale())->title}}</h3>
+                        <div class="row justify-content-center pt-5">
+                            <div class="col-10 col-lg-8 text-center" style="padding-top: 70px" >
+                                <h3 class="display-6 text-white typewriter pt-5" > {{$slide->translate(app()->getLocale())->title}}</h3>
                                 {{-- <a href="" class="btn btn-primary py-3 mt-5 px-5 animated slideInLeft">{{trans('about.read_more')}}</a> --}}
                             </div>
                         </div>
@@ -93,7 +93,7 @@ function getYoutubeThumbnail($url)
                 <p>{{ trans('about.description.part3') }}</p> --}}
                 <div class="d-flex align-items-center mb-5">
                     <div class="d-flex flex-shrink-0 align-items-center justify-content-center border border-5 border-primary" style="width: 120px; height: 120px;">
-                        <h1 class="display-1 mb-n2" >25</h1>
+                        <h1 class="display-1 mb-n2" >10</h1>
                     </div>
                     <div class="ps-4">
                         <h3>{{ trans('about.years_working_experience') }}</h3>
@@ -149,7 +149,7 @@ function getYoutubeThumbnail($url)
 <div class="container ">
     <div class="row">
         <div class="col-md-12 text-center">
-            <h2 class="section-title">{{ trans('about.facts_title') }}</h2>
+            <h2 class="section-title">{{ trans('singel_product.department') }}</h2>
             {{-- <h6 class="display-5 mb-4">{{trans('about.facts_content')}} </h6> --}}
         </div>
     </div>

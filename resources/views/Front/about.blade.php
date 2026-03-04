@@ -75,7 +75,7 @@ p{
                 <p>{{ trans('about.description.part3') }}</p> --}}
                 <div class="d-flex align-items-center mb-5">
                     <div class="d-flex flex-shrink-0 align-items-center justify-content-center border border-5 border-primary" style="width: 120px; height: 120px;">
-                        <h1 class="display-1 mb-n2" >25</h1>
+                        <h1 class="display-1 mb-n2" >10</h1>
                     </div>
                     <div class="ps-4">
                         <h3>{{ trans('about.years_working_experience') }}</h3>

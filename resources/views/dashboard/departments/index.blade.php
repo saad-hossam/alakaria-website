@@ -2,7 +2,7 @@
 @section('css')
 
 @section('title')
-    الاقسام
+    مجالات العمل
 @stop
 
 <!-- Internal Data table css -->
@@ -21,14 +21,14 @@
 <div class="breadcrumb-header justify-content-between">
     <div class="my-auto">
         <div class="d-flex">
-            <h4 class="content-title mb-0 my-auto">الاقسام</h4><span class="text-muted mt-1 tx-13 mr-2 mb-0">/ قائمة
-                الاقسام</span>
+            <h4 class="content-title mb-0 my-auto">مجالات العمل</h4><span class="text-muted mt-1 tx-13 mr-2 mb-0">/ قائمة
+                مجالات العمل</span>
         </div>
     </div>
     @can('department-create')
 
     <div class="d-flex my-xl-auto right-content">
-        <a class="btn btn-primary btn-block" href="{{ route('departments.create') }}">اضافه قسم</a>
+        <a class="btn btn-primary btn-block" href="{{ route('departments.create') }}">اضافه مجال</a>
     </div>
     @endcan
 </div>
@@ -97,9 +97,9 @@
                         <thead>
                             <tr>
                                 <th class="wd-10p border-bottom-0">#</th>
-                                <th class="wd-15p border-bottom-0">اسم القسم</th>
-                                <th class="wd-15p border-bottom-0">صورة القسم</th>
-                                <th class="wd-15p border-bottom-0">حالة القسم</th>
+                                <th class="wd-15p border-bottom-0">اسم المجال</th>
+                                <th class="wd-15p border-bottom-0">صورة المجال</th>
+                                <th class="wd-15p border-bottom-0">حالة المجال</th>
                                 <th class="wd-15p border-bottom-0">العمليات </th>
 
                             </tr>

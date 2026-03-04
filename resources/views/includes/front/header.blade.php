@@ -10,7 +10,7 @@
     <div class="top-bar container-fluid bg-dark p-0 wow fadeIn d-none d-lg-block" data-wow-delay="0.1s">
          <div class="container ">
             <div class="col-lg-12 d-flex justify-content-start ps-5"  >
-                    <div class=" align-items-center py-4 text-light ">                <span class="organization-text">
+                    <div class=" align-items-start py-4 text-light fs-5 ">                <span class="organization-text">
                                 {{ trans('header.organization_subtitle') }}
                             </span>
                         </div>
@@ -55,7 +55,7 @@
     <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top py-lg-0 px-lg-5 wow fadeIn" data-wow-delay="0.1s">
         <a href="{{route('home')}}" class="navbar-brand ms-4 ms-lg-0">
-            <h1 class="text-primary m-0"><img class="me-3" src="/img/LOGO_AKARIA-1.jpg.jpeg"  width="100px" height="60px" alt="Icon"></h1>
+            <h1 class="text-primary m-0"><img class="me-3" src="/img/274730667_341453347913506_6048684782427197231_n.jpg"  width="100px" height="60px" alt="Icon"></h1>
         </a>
         <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>

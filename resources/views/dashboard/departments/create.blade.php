@@ -8,7 +8,7 @@
     <div class="breadcrumb-header justify-content-between">
         <div class="my-auto">
             <div class="d-flex">
-                <h4 class="content-title mb-0 my-auto">اضافه قسم</h4>
+                <h4 class="content-title mb-0 my-auto">اضافه مجال</h4>
             </div>
         </div>
         @can('department-list')
@@ -74,7 +74,7 @@
 
                             <!-- Status -->
                             <div class="col-md-6">
-                                <label class="form-label h5" for="status">حاله القسم</label>
+                                <label class="form-label h5" for="status">حاله المجال</label>
                                 <div class="form-group">
                                     <select class="form-control select2-search" id="status" name="status" required>
                                         <option value="active" selected>مفعل</option>

@@ -5,7 +5,7 @@ return[
     'our_profile'=>'اعمالنا',
     'our_services'=>'خدماتنا',
     'our_team'=>'فريقنا',
-    'our_departments'=>'أقسامنا',
+    'our_departments'=>' مجالاتنا',
     'gallary'=>'المعرض',
     'our_vision'=>'رؤيتنا',
     'our_message'=>'رسالتنا',

@@ -3,7 +3,7 @@ return[
     'raw_material'=>'Raw Material',
     'dimensions'=>'Dimensions',
     'price'=>'PRICE',
-    'department'=>'Department',
+    'department'=>'Business areas',
     'category'=>'Category',
     'home'=>'HOME',
     'product_detail'=>'PRODUCT DETAIL ',
