@@ -68,6 +68,10 @@ p{
                     <i class="fa fa-check text-primary me-2 mt-1"></i>
                     {{ trans('about.description.part6') }}
                 </p>
+                <p class="d-flex align-items-start">
+                    <i class="fa fa-check text-primary me-2 mt-1"></i>
+                    {{ trans('about.description.part7') }}          </p>
+
 
 
                 {{-- <p>{{ trans('about.description.part1') }}</p>

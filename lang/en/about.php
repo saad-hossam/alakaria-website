@@ -9,7 +9,8 @@ return [
         'part3' => 'We are also proud to have competent accountants who ensure the safety and transparency of financial procedures, contributing to the company’s confident and stable growth. This excellence extends across all departments.',
         'part4' => 'Since our inception, we have been committed to delivering real value to our clients through designing projects that meet the highest quality standards, address the needs of local and regional markets, and focus on innovation.',
         'part5' => 'Classified as First Category within the Federation of Construction and Building Contractors.',
-        'part6' => 'We guarantee the implementation of a quality management system certified according to the international standard ISO 9001, and the establishment and application of a set of processes, procedures, and standards that ensure the efficient and effective execution of quality plans and objectives.',
+        'part6' => 'Certified with ISO 9001 .',
+        'part7' => 'We guarantee the implementation of a quality management system certified according to the international standard ISO 9001, and the establishment and application of a set of processes, procedures, and standards that ensure the efficient and effective execution of quality plans and objectives.',
     ],
 
     'feature' => [
